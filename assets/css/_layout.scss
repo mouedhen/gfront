@@ -1,0 +1,40 @@
+@import "variables";
+
+.navbar {
+  position: fixed;
+  top: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 100vh;
+  width: $navbar-width-lg;
+  z-index: 99;
+  background: #b71c1c;
+  color: #f2f2f2;
+  @media screen and (max-width: $break-xs) {
+    width: 50px;
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.container {
+  position: absolute;
+  left: $navbar-width-lg;
+
+  @media screen and (max-width: $break-xs) {
+    left: $navbar-width-xs;
+  }
+}
+
+.app[dir='rtl'] {
+  .navbar {
+    right: 0;
+  }
+  .container {
+    right: $navbar-width-lg;
+    @media screen and (max-width: $break-xs) {
+      right: $navbar-width-xs;
+    }
+  }
+}
