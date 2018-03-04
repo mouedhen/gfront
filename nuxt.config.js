@@ -21,7 +21,7 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: {color: '#3B8070'},
+  loading: {color: '#B71C1C'},
 
   /*
   ** Global CSS
@@ -72,6 +72,12 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
+
+      config.module.rules.push({
+        test: /\.svg$/,
+        loader: 'svg-inline-loader',
+        exclude: /node_modules/
+      })
 
     }
   }

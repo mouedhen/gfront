@@ -1,39 +1,25 @@
 <template>
   <div class="app" :dir="direction">
-    <aside class="navbar">
-      <button @click="changeDirection">TO RTL</button>
-      <nav>
-        <h1>GOULELHOM</h1>
-        <h2>CLIAMS</h2>
-      </nav>
-    </aside>
-
+    <side-bar/>
     <nuxt/>
+    <app-footer />
   </div>
 </template>
 
 <script>
   import {mapGetters} from 'vuex'
+  import SideBar from '@/components/shared/SideBar'
+  import AppFooter from '@/components/shared/AppFooter'
 
   export default {
-    data() {
-      return {
-        //
-      }
+    components: {
+      SideBar,
+      AppFooter,
     },
     computed: {
       ...mapGetters({
-        direction: 'getDirection'
+        direction: 'getDirection',
       })
     },
-    methods: {
-      changeDirection() {
-        if (this.direction === 'rtl') {
-          this.$store.dispatch('setDirection', {direction: 'tlr'});
-          return
-        }
-        this.$store.dispatch('setDirection', {direction: 'rtl'});
-      }
-    }
   }
 </script>

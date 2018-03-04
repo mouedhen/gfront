@@ -1,7 +1,17 @@
 @import "variables";
 @import "reset";
 @import "layout";
+@import "navbar";
+@import "lang";
 
 body {
   background: #f2f2f2;
+}
+
+a {
+  text-decoration: none;
+  color: #f2f2f2;
+  &:hover {
+    color: #fff;
+  }
 }

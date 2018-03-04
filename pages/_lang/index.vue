@@ -8,9 +8,14 @@
 </template>
 
 <script>
+
   export default {
+    components: {
+      //
+    },
     head() {
-      return { title: this.$t('home.title') }
+      return {title: this.$t('home.title')}
     }
   }
 </script>
+

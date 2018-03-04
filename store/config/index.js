@@ -5,6 +5,7 @@ export default {
   state: {
     locales: ['en', 'fr', 'ar'],
     locale: 'en',
+    directions: ['rtl', 'ltr'],
     direction: 'ltr'
   },
   getters: {
