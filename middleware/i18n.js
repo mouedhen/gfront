@@ -19,9 +19,4 @@ export default function ({isHMR, app, store, route, params, error, redirect}) {
   }
 
   app.i18n.locale = store.state.config.locale;
-
-  // If route is /en/... -> redirect to /...
-  if (locale === 'en' && route.fullPath.indexOf('/en') === 0) {
-    return redirect(route.fullPath.replace(/^\/en/, '/'))
-  }
 }

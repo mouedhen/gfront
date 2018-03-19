@@ -5,7 +5,7 @@
          :key="index">
       <nuxt-link
         style="color: #47494e"
-        :to="{ name: 'lang', params: { lang: locale }}">
+        :to="{ name: $route.name, params: { lang: locale }}">
         {{ locale }}
       </nuxt-link>
     </div>

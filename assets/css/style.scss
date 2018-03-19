@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 @import "variables";
 @import "reset";
 @import "layout";
@@ -15,3 +17,28 @@ a {
     color: #fff;
   }
 }
+
+/**********************************************/
+.p-background {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+.splash-up {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 1;
+  box-shadow: 3px 0 3px rgba(0, 0, 0, .3);
+
+  display: inline-block;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto;
+  text-align: center;
+}
+

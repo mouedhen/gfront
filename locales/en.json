@@ -7,37 +7,44 @@
   },
   "navigation": {
     "home": {
-      "title": "Goulel'Hom",
+      "title": "goulel'hom",
       "description": "Goulel’hom is a project launched by Raj Tunisie with the aim of enhancing participatory democracy and enabling citizens to make decisions for a better tomorrow.",
       "description_2": "Today, you have the opportunity to express your opinion, expose your problem freely, you can also submit your complaint or your petition in order to reach a solution with public institutions."
     },
     "complains": {
       "title": "complains",
-      "description": "description"
+      "description": "Here you find a series of complaints classified by categories."
     },
     "petitions": {
       "title": "petitions",
-      "description": "description"
+      "description": "You can submit a new petition or sign a petition."
     },
     "events": {
       "title": "events",
-      "description": "description"
+      "description": "Here is the set of events organized by Goulel’hom."
     },
     "municipalities": {
       "title": "municipalities",
-      "description": "description"
+      "description": "This link contains information related to municipalities."
     },
     "reports": {
       "title": "reports",
-      "description": "description"
+      "description": "Here are reports about complaints, petitions and related solutions."
     },
     "press": {
       "title": "press",
-      "description": "description"
+      "description": "Press opinions."
     }
   },
-  "home": {
-    "title": "Welcome",
-    "introduction": "This is an introduction in English."
-  }
+  "slogan-1-word-1": "We can build the future",
+  "slogan-1-word-2": "TOGETHER",
+  "slogan-2-word-1": "The true balance of democracy is not only in election funds but in",
+  "slogan-2-word-2": "people's consciousness",
+  "slogan-2-cite": "Jean-Jacques Rousseau",
+  "slogan-3-word-1": "The power of the people is stronger than the people in the",
+  "slogan-3-word-2": "Power",
+  "slogan-3-cite": "Anonymous",
+  "slogan-4-word-1": "No one likes his restrictions even if they are",
+  "slogan-4-word-2": "Gold",
+  "slogan-4-cite": "Abraham Lincoln"
 }

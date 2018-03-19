@@ -22,7 +22,7 @@
     &:hover, &.active {
       padding-top: auto;
       box-shadow: 0 6px 6px rgba(34, 34, 34, .3);
-      flex: 4;
+      // flex: 4;
       p {
         font-size: 1rem;
         transition: font-size 300ms ease-out, color 200ms ease-out;
@@ -32,7 +32,8 @@
 }
 
 .title-container {
-  display: flex
+  display: flex;
+  align-content: center;
 }
 
 $palette-accordion: (#B71C1C, #C62828, #D32F2F, #E53935, #F44336, #EF5350, #E57373, #EF9A9A);
@@ -60,4 +61,7 @@ $palette-accordion: (#B71C1C, #C62828, #D32F2F, #E53935, #F44336, #EF5350, #E573
 
 .navtitle {
   text-transform: uppercase;
+  // font-size: 2rem;
+  padding: 0 12px;
+  font-weight: 900;
 }
