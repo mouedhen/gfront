@@ -39,6 +39,7 @@ module.exports = {
     '@/plugins/i18n',
     { src: '@/plugins/VueFlickity.js', ssr: false },
     { src: '@/plugins/VueSwiperPlugin.js', ssr: false },
+    { src: '@/plugins/vue-masonry', ssr: false },
   ],
 
   router: {

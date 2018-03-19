@@ -60,10 +60,25 @@
       <p>this is a description</p>
     </div>
 
-    <div class="row">
-      <h1>HELLO</h1>
-      <p>this is a description</p>
+    <div class="row"  v-bind:class="[activeMenu === 'complains' ? 'active' : '']">
+      <nuxt-link :to="{ name: 'lang-press', params: { lang: locale }}">
+        <div class="title-container">
+          <div class="nav-icons">
+            <svg class="icon icon-bullhorn">
+              <use href="/images/svg/symbol-defs.svg#icon-bullhorn"></use>
+            </svg>
+          </div>
+          <div style="width: 100%">
+            <h1 class="navtitle">{{ $t('navigation.press.title') }}</h1>
+          </div>
+        </div>
+      </nuxt-link>
+      <div>
+        <p>{{ $t('navigation.press.description') }}</p>
+      </div>
+
     </div>
+
   </nav>
 </template>
 

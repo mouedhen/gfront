@@ -244,6 +244,9 @@
     right: 1vw;
     left: unset;
     background: #f2f2f2;
+    &::-webkit-scrollbar {
+      display: none;
+    }
     @media screen and (max-width: 840px) {
       width: calc(98vw - 350px);
     }
