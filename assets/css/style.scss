@@ -113,9 +113,16 @@ dl.petition-dl {
 
 h1, h2, h3, h4 {
   margin: .8rem 0;
+  text-transform: capitalize;
 }
 
 p {
   line-height: 1.3rem;
   font-size: 1rem;
+}
+
+.ejs-embed {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }

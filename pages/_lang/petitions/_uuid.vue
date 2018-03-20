@@ -82,7 +82,7 @@
                 <social-sharing :url="sharedUrl"
                                 :title="petition.name"
                                 :description="petition.description"
-                                quote="Vue is a progressive framework for building user interfaces."
+                                :quote="petition.description"
                                 hashtags="GoulelHom,non-profits,organization"
                                 twitter-user="GoulelHom"
                                 inline-template>
@@ -133,10 +133,6 @@
           href: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'
         },
       ]
-    },
-    mounted() {
-      console.log(appDomain + this.$route.path)
-      console.log(this.petition)
     },
     asyncData({params}) {
       console.log(params.uuid)

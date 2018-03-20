@@ -197,9 +197,7 @@
       }
     },
     mounted() {
-
       this.renderMap()
-
     }
   }
 </script>
