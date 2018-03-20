@@ -1,6 +1,96 @@
 {
+  "generics": {
+    "next step": "étape suivante",
+    "submit": "valider",
+    "cancel": "annuler"
+  },
+  "navigation": {
+    "home": {
+      "title": "goulel'hom",
+      "description": "Goulel'hom est un projet lancé par RAJ Tunisie dans le but de renforcer la démocratie participative et permettre aux citoyens de prendre des décisions pour un avenir meilleur.",
+      "description_2": "Aujourd'hui, vous avez la possibilité d'exprimer votre opinion, d'exposer votre problème librement, vous pouvez également soumettre votre plainte ou votre pétition afin de parvenir à une solution auprès des institutions publiques."
+    },
+    "complains": {
+      "title": "plaintes",
+      "description": "Vous pouvez déposer une plainte auprès des administrations publiques, auprès des transports publics ou municipaux. Si vous remarquez des abus ou des violations de l'environnement ou de l'intérêt collectif, vous pouvez vous plaindre et fournir des preuves de soutien telles que des photos ou des vidéos. Vous pouvez également localiser les plaintes sur la carte."
+    },
+    "petitions": {
+      "title": "pétitions",
+      "description": "Vous pouvez soumettre une nouvelle pétition ou en signer une déjà existante."
+    },
+    "events": {
+      "title": "évènements",
+      "description": "L'ensemble des évènements organisés par Goulel’hom."
+    },
+    "municipalities": {
+      "title": "municipalitiés",
+      "description": "Informations utiles relatives aux municipalités."
+    },
+    "reports": {
+      "title": "rapport",
+      "description": "Les rapport établis par les expert de Goulel'Hom sur l'ensemble des plaintes et des pétitions déposées."
+    },
+    "press": {
+      "title": "presse",
+      "description": "Avis de presse."
+    }
+  },
   "home": {
-    "title": "Bienvenue",
-    "introduction": "Ceci est un texte d'introduction en Français."
-  }
+    "slogan-1-word-1": "Construisons notre avenir",
+    "slogan-1-word-2": "ENSEMBLE",
+    "slogan-2-word-1": "Le véritable équilibre de la démocratie n'est pas seulement dans les fonds électoraux mais dans",
+    "slogan-2-word-2": "LA CONSCIENCE DES GENS",
+    "slogan-2-cite": "Jean-Jacques Rousseau",
+    "slogan-3-word-1": "Le pouvoir du peuple est plus fort que le peuple au",
+    "slogan-3-word-2": "POUVOIR",
+    "slogan-3-cite": "Anonymous",
+    "slogan-4-word-1": "Personne n'aime des chaînes même si elle sont en",
+    "slogan-4-word-2": "OR",
+    "slogan-4-cite": "Abraham Lincoln"
+  },
+  "complains": {
+    "title": "plaintes"
+  },
+  "contact us": "nous contacter",
+  "We are eager to discuss with you, and answer any questions you may have. Enter your details and we ll get back to you shortly": "Nous sommes impatients de discuter avec vous et de répondre à vos questions. Entrez vos coordonnées et nous reviendrons vers vous sous peu",
+  "petitions": "pétitions",
+  "name": "nom",
+  "your name": "votre nom",
+  "phone number": "numéro de téléphone",
+  "fax number": "fax",
+  "your phone number": "votre numéro de téléphone",
+  "email": "e-mail",
+  "your email address": "votre adresse e-mail",
+  "address": "adresse",
+  "your street address": "votre adresse postale",
+  "end date": "date d'échéance",
+  "municipality": "municipalité",
+  "theme": "thème",
+  "please select the related theme": "merci de selectionner un thème",
+  "subject": "sujet",
+  "message": "message",
+  "your message": "votre message",
+  "petition target": "cible",
+  "must be submitted to": "doit être soumise à",
+  "requested signatures": "signatures requises",
+  "requested signatures number": "nombre de signatures requises",
+  "title": "titre",
+  "choose a title": "choisir un titre",
+  "description": "description",
+  "drop file here or": "déposer un fichier",
+  "click to upload": "clicker pour télécharger",
+  "files with a size less than 500kb": "fichier avec une taille inférieure 500kb",
+  "next step": "étape suivante",
+  "submit": "valider",
+  "view details": "voir détails",
+  "read more": "lire la suite",
+  "cancel": "annuler",
+  "RAJ Tunisie": "RAJ Tunisie",
+  "Join us": "Nous rejoindre",
+  "Partners": "Partnaires",
+  "Confidentiality & Cookies": "Confidentialité & Cookies",
+  "Legal Mentions": "Mentions légales",
+  "Contact us": "Nous contacter",
+  "sign": "signer la pétition",
+  "2nd floor, 15 Street January 18, 1952 - Tunis 1001": "2éme étage, 15 Rue 18 Janvier 1952 - Tunis 1001"
 }

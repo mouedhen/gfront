@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+// Abstract
+// ----------------
+@import "abstract/variable";
+// @import "abstract/color";
+// @import "abstract/mixin";
+// @import "abstract/";
+// Vendor
+// --------
+// @import "~normalize.css";
+// @import "~suitcss-base/lib/base";
+@import "~suitcss-components-button/lib/button";
+@import "~libsass-compass-vertical-rhythm/lib/compass_rhythm";
+@import "~modularscale-sass/stylesheets/modularscale";
+@import "~sass-math-pow/sass/math-pow";
+// @import "~suitcss-components-flex-embed/lib/flex-embed";
+// @import "vendor/anthonyshortSuperFormReset";
+// @import "~flickity/css/flickity";
+// @import "vendor/";
+// Base
+// --------
+// @import "base/base";
+// @import "base/gridlover";
+@import "base/symbol";
+@import "base/sprite";
+// @import "base/";
+// Layout
+// --------
+// @import "layout/main";
+@import "layout/aside";
+// @import "layout/section";
+// @import "layout/navigation";
+// @import "layout/footer";
+// @import "layout/content";
+// @import "layout/grid";
+// @import "layout/modal";
+// @import "layout/";
+// Module
+// --------
+@import "module/aside";
+// @import "module/section";
+// @import "module/navigation";
+// @import "module/footer";
+// @import "module/content";
+// @import "module/form-group";
+// @import "module/button-group";
+// @import "module/modal";
+// @import "module/";
+// State
+// --------
+// @import "state/main";
+// @import "state/form-group";
+// @import "state/";
+// Component
+// ----------------
+@import "component/button";
+@import "component/logo-type";
+@import "component/accordion";
+// @import "component/menu";
+// @import "component/carousel";
+// @import "component/flexembed";
+// @import "component/card";
+// @import "component/hotspot";
+// @import "component/";
+
+// Page
+// --------
+// @import "page/";
+
+// Theme
+// --------
+// @import "theme/";
+
+
+// @import "add";
+.accordion__trigger {
+  justify-content: flex-start;
+}
+.aside__description {
+  visibility: visible;
+  text-align: justify;
+}
+
+.aside__accordion .accordion__panel p {
+  visibility: visible;
+  text-align: justify;
+}
+
+aside {
+  -webkit-box-shadow: 3px 0 3px rgba(0, 0, 0, .3);
+  box-shadow: 3px 0 3px rgba(0, 0, 0, .3);
+}
+
+.aside__accordion .accordion {
+  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, .3);
+}
+
+.sprite, .logo-type--img.logo-type--logotype .type, .logo-type--img.logo-type--logotypeNegative .type {
+  background-image: url('/images/svg/sprite.svg');
+}
+
+.accordion__trigger {
+  height: 3.5rem;
+  line-height: 3.5rem;
+}
+
+.accordion__trigger .button__symbol--square {
+  line-height: 3.5rem;
+}
+.aside .navigation {
+  height: 3rem;
+}
+.aside__description {
+  padding-top: 0 !important;
+  // margin-top: 0 !important;
+}

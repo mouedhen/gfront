@@ -8,7 +8,7 @@
 
 <script>
   import {mapGetters} from 'vuex'
-  import SideBar from '@/components/shared/SideBar'
+  import SideBar from '@/components/base/SideBar'
   import AppFooter from '@/components/shared/AppFooter'
 
   export default {

@@ -1,37 +1,13 @@
 @import "variables";
 
-.navbar {
-  position: fixed;
-  top: 0;
-  overflow: hidden;
-  // overflow-y: scroll;
-  height: 100vh;
-  width: $navbar-width-lg;
-  z-index: 99;
-  // background: #b71c1c;
-  color: #f2f2f2;
-  @media screen and (max-width: $break-xs) {
-    display: none !important;
-    /*
-    width: 60px;
-    &:hover {
-      width: 350px;
-    }
-    p {
-      display: none;
-    }
-    */
-  }
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
 
 .container {
   position: absolute;
   left: $navbar-width-lg;
   width: calc(100vw - 350px);
   height: 100vh;
+  overflow-x: hidden;
+  padding-bottom: 32px;
   @media screen and (max-width: $break-xs) {
     left: 0;
     width: 100vw;
@@ -62,9 +38,10 @@ footer {
     left: 0;
     width: calc(100vw - 350px);
     @media screen and (max-width: $break-xs) {
-      right: $navbar-width-xs;
+      // right: $navbar-width-xs;
       left: 0;
-      width: calc(100vw - 50px);
+      // width: calc(100vw - 50px);
+      width: 100vw;
     }
   }
 }

@@ -1,0 +1,64 @@
+.accordion__trigger {
+  justify-content: flex-end;
+  padding-left: 0 !important;
+  height: 3.5rem;
+  line-height: 3.5rem;
+
+  .button__label {
+    display: none;
+  }
+
+  .button__symbol--square {
+    font-size: 2.375rem;
+    text-align: left;
+    line-height: 3.5rem;
+    width: 4rem;
+  }
+}
+
+.main--off-2-aside {
+  .accordion__trigger {
+    justify-content: unset;
+    padding-left: 0 !important;
+
+    .button__label {
+      display: block;
+      font-size: 1.2rem;
+      line-height: 3.5rem;
+      text-transform: uppercase;
+    }
+
+    .button__symbol--square {
+      text-align: center;
+    }
+  }
+
+  .accordion__panel p {
+    margin: -0.6rem .2rem 1rem 3rem;
+    text-align: justify;
+  }
+}
+/*
+#toggleAsideTrigger, #edisaNavigationLogotype {
+  // display: none;
+}
+
+@media screen and (max-width: 840px) {
+  #toggleEdisaTrigger {
+    display: block;
+  }
+  #toggleAsideTrigger, #edisaNavigationLogotype {
+    display: block;
+  }
+}
+*/
+
+aside {
+  -webkit-box-shadow: 3px 0 3px rgba(0, 0, 0, .3);
+  box-shadow: 3px 0 3px rgba(0, 0, 0, .3);
+}
+
+.aside__accordion .accordion {
+  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, .3);
+}

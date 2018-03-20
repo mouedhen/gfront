@@ -6,6 +6,15 @@
 @import "navbar";
 @import "lang";
 
+/*
+OLD
+ */
+@import "aside";
+// @import "contact";
+// @import "municipalities";
+@import "social";
+// @import "underconstruction";
+
 body {
   background: #f2f2f2;
 }
@@ -42,3 +51,71 @@ a {
   text-align: center;
 }
 
+dl.petition-dl {
+  text-align: center;
+  dt {
+    margin-top: .5rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    text-transform: capitalize;
+  }
+  dd {
+    margin-top: .5rem;
+    line-height: 1.4rem;
+    font-size: 1.2rem;
+  }
+}
+
+.petition-modal {
+  width: 50vw;
+  top: 15vh !important;
+  height: 70vh;
+
+  @media screen and (min-width: 480px) and (max-width: 840px) {
+    width: 80vw;
+    top: 10vh !important;
+    height: 80vh;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 90vw;
+    top: 5vh !important;
+    height: 88vh;
+  }
+}
+
+.cover {
+  margin:0;
+  padding:0;
+  background-position-x: center;
+  background-position-y: center;
+  background-origin: initial;
+  background-clip: initial;
+  background: no-repeat fixed;
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisée */
+}
+
+.card-btn a {
+  border-radius: 2em;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  background-color: #b71c1c;
+  padding: 10px 20px 10px 20px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none !important;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+h1, h2, h3, h4 {
+  margin: .8rem 0;
+}
+
+p {
+  line-height: 1.3rem;
+  font-size: 1rem;
+}

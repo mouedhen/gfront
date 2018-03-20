@@ -37,6 +37,7 @@ module.exports = {
   plugins: [
     '@/plugins/element-ui',
     '@/plugins/i18n',
+    '@/plugins/vue-social-sharing',
     { src: '@/plugins/VueFlickity.js', ssr: false },
     { src: '@/plugins/VueSwiperPlugin.js', ssr: false },
     { src: '@/plugins/vue-masonry', ssr: false },
@@ -52,6 +53,7 @@ module.exports = {
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
+    '@nuxtjs/pwa',
   ],
 
   /*

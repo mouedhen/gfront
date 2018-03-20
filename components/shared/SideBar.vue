@@ -60,7 +60,7 @@
       <p>this is a description</p>
     </div>
 
-    <div class="row"  v-bind:class="[activeMenu === 'complains' ? 'active' : '']">
+    <div class="row"  v-bind:class="[activeMenu === 'press' ? 'active' : '']">
       <nuxt-link :to="{ name: 'lang-press', params: { lang: locale }}">
         <div class="title-container">
           <div class="nav-icons">
@@ -100,6 +100,7 @@
         let name = this.$route.name;
         if (name === 'index' || name === 'lang') return 'home'
         if (name === 'complains' || name === 'lang-complains') return 'complains'
+        if (name === 'press' || name === 'lang-press') return 'press'
       }
     },
     methods: {

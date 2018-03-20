@@ -7,26 +7,26 @@
         <div class="carousel__item">
           <img src="/images/slider/slide_0.jpg" alt="Sonio">
           <div class="slogan">
-            <blockquote><span class="word">{{ $t('slogan-2-word-1') }}</span><br>
-              <strong class="word">{{ $t('slogan-2-word-2') }}</strong><br>
-              <cite>-- {{ $t('slogan-2-cite') }} --</cite></blockquote>
+            <blockquote><span class="word">{{ $t('home.slogan-2-word-1') }}</span><br>
+              <strong class="word">{{ $t('home.slogan-2-word-2') }}</strong><br>
+              <cite>-- {{ $t('home.slogan-2-cite') }} --</cite></blockquote>
           </div>
         </div>
         <div class="carousel__item">
           <img src="/images/slider/slide_1.jpg" alt="Sonio">
           <div class="slogan">
-            <blockquote><span class="word">{{ $t('slogan-3-word-1') }}</span><br>
-              <strong class="word">{{ $t('slogan-3-word-2') }}</strong><br>
-              <cite>-- {{ $t('slogan-3-cite') }} --</cite></blockquote>
+            <blockquote><span class="word">{{ $t('home.slogan-3-word-1') }}</span><br>
+              <strong class="word">{{ $t('home.slogan-3-word-2') }}</strong><br>
+              <cite>-- {{ $t('home.slogan-3-cite') }} --</cite></blockquote>
           </div>
         </div>
         <div class="carousel__item">
           <img src="/images/slider/slide_2.jpg" alt="Sonio">
           <div class="slogan">
             <blockquote>
-              <span class="word">{{ $t('slogan-4-word-1') }}</span><br>
-              <strong class="word">{{ $t('slogan-4-word-2') }}</strong><br>
-              <cite class="word">-- {{ $t('slogan-4-cite') }} --</cite>
+              <span class="word">{{ $t('home.slogan-4-word-1') }}</span><br>
+              <strong class="word">{{ $t('home.slogan-4-word-2') }}</strong><br>
+              <cite class="word">-- {{ $t('home.slogan-4-cite') }} --</cite>
             </blockquote>
           </div>
         </div>
@@ -34,15 +34,14 @@
           <img src="/images/slider/slide_3.jpg" alt="Sonio">
           <div class="slogan">
             <blockquote>
-              <span class="word">{{ $t('slogan-4-word-1') }}</span><br>
-              <strong class="word">{{ $t('slogan-4-word-2') }}</strong><br>
-              <cite class="word">-- {{ $t('slogan-4-cite') }} --</cite>
+              <span class="word">{{ $t('home.slogan-4-word-1') }}</span><br>
+              <strong class="word">{{ $t('home.slogan-4-word-2') }}</strong><br>
+              <cite class="word">-- {{ $t('home.slogan-4-cite') }} --</cite>
             </blockquote>
           </div>
         </div>
       </flickity>
     </no-ssr>
-
 
   </div>
 </template>

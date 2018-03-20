@@ -1,0 +1,54 @@
+@import "./zaza-ui/goulelhom.scss";
+
+.aside .navigation {
+  display: flex;
+}
+.close-menu {
+  display: none;
+}
+
+$break-xs: 480px;
+$break-md: 840px;
+$break-lg: 1200px;
+
+/*
+MOBILE
+ */
+@media screen and (max-width: $break-xs) {
+  .l-aside {
+    width: 100%;
+    display: none;
+    .aside__description, .accordion__panel p {
+      display: none;
+    }
+  }
+  .close-menu {
+    display: block;
+  }
+}
+
+/*
+TABLET
+ */
+@media screen and (min-width: $break-xs) and (max-width: $break-md) {
+  .l-aside {
+    // display: none;
+  }
+  .close-menu {
+    display: block;
+  }
+}
+
+/*
+SMALL DESKTOP
+ */
+@media screen and (min-width: $break-md) and (max-width: $break-lg) {
+  //
+}
+
+/*
+DESKTOP
+ */
+@media screen and (min-width: $break-lg) {
+  //
+}
