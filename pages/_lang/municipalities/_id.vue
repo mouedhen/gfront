@@ -8,13 +8,13 @@
         <h1 class="title" style="text-align: center">{{ municipality['name_'+ $i18n.locale] }}</h1>
 
         <el-col :xs="24" :lg="12" style="text-align: center">
-          <el-progress type="circle" :percentage="parseFloat(relativePopulation.toFixed(2))"/>
+          <el-progress type="circle" :percentage="relativePopulation"/>
           <br>
           <span>{{$t('% total population of')}} {{ municipality.city['name_'+ $i18n.locale] }}</span>
         </el-col>
 
         <el-col :xs="24" :lg="12" style="text-align: center">
-          <el-progress type="circle" :percentage="parseFloat(relativeHouses)"/>
+          <el-progress type="circle" :percentage="relativeHouses"/>
           <br>
           <span>{{$t('% total housing of')}} {{ municipality.city['name_'+ $i18n.locale] }}</span>
         </el-col>
@@ -113,21 +113,21 @@
         if (isNaN(relativeHouses)) {
           return 0
         }
-        return relativeHouses.toFixed(2)
+        return parseFloat(relativeHouses).toFixed(2)
       },
       relativePopulation: function () {
         let relativePopulation = this.municipality.houses * 100 / this.municipality.city.population;
         if (isNaN(relativePopulation)) {
           return 0
         }
-        return relativePopulation.toFixed(2)
+        return parseFloat(relativePopulation).toFixed(2)
       },
       inhabitantsHousing: function () {
         let x = this.municipality.population / this.municipality.houses;
         if (isNaN(x)) {
           return 0
         }
-        return x.toFixed(2)
+        return parseFloat(x).toFixed(2)
       },
       attachments: function () {
         return this.municipality.attachments
