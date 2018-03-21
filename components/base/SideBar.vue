@@ -77,14 +77,14 @@
             icon: '/images/svg/symbol-defs.svg#icon-library',
             label: this.$t('navigation.municipalities.title'),
             description: this.$t('navigation.municipalities.description'),
-            routeName: 'lang'
+            routeName: 'lang-municipalities'
           },
           {
             id: 5,
             icon: '/images/svg/symbol-defs.svg#icon-files-empty',
             label: this.$t('navigation.reports.title'),
             description: this.$t('navigation.reports.description'),
-            routeName: 'lang'
+            routeName: 'lang-press'
           },
           {
             id: 6,

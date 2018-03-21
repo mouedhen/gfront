@@ -1,10 +1,21 @@
 <template>
   <div>
+
+    <el-popover
+      ref="popoverSidiHsin"
+      width="350"
+      trigger="hover">
+      <h3>Sidi Hsin</h3>
+      <no-ssr>
+        <municipality-stats :id="1" />
+      </no-ssr>
+    </el-popover>
+
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate"
-         viewBox="422.179 81.662 517.4 604.676" width="517.4" height="604.676">
+         viewBox="422.179 81.662 517.4 604.676" >
       <g id="tunis_map">
         <g>
-          <path id="sidihsin" class="communes active"
+          <path id="sidihsin" class="communes" v-popover:popoverSidiHsin
                 d=" M 467.854 519.113 L 493.811 500.144 C 493.811 500.144 502.297 485.668 529.752 493.655 L 611.118 457.714 L 614.113 460.709 L 607.624 467.198 C 600.358 474.764 597.036 485.285 598.639 495.651 L 597.141 504.637 L 599.637 512.124 L 595.644 515.619 L 598.139 519.113 L 593.647 522.607 L 596.642 530.095 L 603.131 530.095 L 607.125 524.105 L 606.626 533.09 L 614.113 535.087 L 614.113 544.571 L 618.107 547.566 L 621.102 555.054 L 624.596 555.054 L 624.596 567.034 L 634.58 577.018 L 624.097 596.985 C 624.097 596.985 614.612 595.487 617.607 605.471 L 642.067 633.924 L 646.061 633.924 L 629.089 651.895 L 628.589 656.886 L 623.598 663.875 L 616.609 656.886 L 608.622 675.356 C 608.622 675.356 591.65 664.873 588.156 680.348 L 570.185 680.348 L 567.19 673.359 L 551.217 675.855 L 541.233 666.87 L 540.235 660.88 L 536.74 659.382 L 531.749 651.895 L 528.754 649.898 L 528.254 644.407 L 530.251 640.414 L 529.253 634.923 L 534.744 607.967 L 521.765 600.978 L 517.272 602.476 L 499.801 585.504 L 471.348 571.527 L 484.826 558.049 L 467.854 519.113 Z "
                 fill="rgb(203,203,203)" vector-effect="non-scaling-stroke" stroke-width="2.995"
                 stroke="rgb(255,255,255)"
@@ -65,8 +76,11 @@
 </template>
 
 <script>
+  import MunicipalityStats from './MunicipalityStats'
+
   export default {
-    name: "municipalities-map"
+    name: "municipalities-map",
+    components: {MunicipalityStats}
   }
 </script>
 

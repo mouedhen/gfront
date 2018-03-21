@@ -1,4 +1,3 @@
-<i18n src="../../i18n/locales.json"/>
 <template>
 
   <div id="carousel" class="carousel">
@@ -88,7 +87,7 @@
       .slogan {
         width: 100%;
         position: absolute;
-        bottom: 12%;
+        bottom: 15%;
         letter-spacing: -0.1rem;
       }
       .slogan blockquote {
@@ -112,6 +111,16 @@
           text-transform: capitalize;
         }
       }
+    }
+  }
+
+  blockquote {
+    text-align: right !important;
+  }
+
+  .app[dir='rtl'] {
+    blockquote {
+      text-align: left !important;
     }
   }
 </style>
