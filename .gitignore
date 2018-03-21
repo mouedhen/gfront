@@ -15,5 +15,3 @@ npm-debug.log
 dist
 
 sw.*
-
-models/config.js
