@@ -1,77 +1,77 @@
 <template>
   <div class="container">
 
-
     <div class="cover" v-bind:style="{backgroundImage: 'url('+ cover +')'}" style="height: 150px"></div>
 
-    <el-row :gutter="24" style="padding: 1rem">
+    <el-row :gutter="24" style="padding: 1rem; flex-wrap: wrap" type="flex">
       <el-col :xs="24" :sm="12" :lg="16">
         <h1 class="title" style="text-align: center">{{ municipality['name_'+ $i18n.locale] }}</h1>
 
         <el-col :xs="24" :lg="12" style="text-align: center">
           <el-progress type="circle" :percentage="parseFloat(relativePopulation.toFixed(2))"/>
           <br>
-          <span>% total population of {{ municipality.city['name_'+ $i18n.locale] }}</span>
+          <span>{{$t('% total population of')}} {{ municipality.city['name_'+ $i18n.locale] }}</span>
         </el-col>
 
         <el-col :xs="24" :lg="12" style="text-align: center">
           <el-progress type="circle" :percentage="parseFloat(relativeHouses)"/>
           <br>
-          <span>% total housing of {{ municipality.city['name_'+ $i18n.locale] }}</span>
+          <span>{{$t('% total housing of')}} {{ municipality.city['name_'+ $i18n.locale] }}</span>
         </el-col>
 
         <el-card class="stat margin-top">
           <div style="padding: 1rem; line-height: 1rem; text-align: center">
-            <b>Inhabitants / Housing : </b> {{ inhabitantsHousing }}
+            <p><b>{{$t('Inhabitants / Housing')}} : </b> {{ inhabitantsHousing }}</p>
           </div>
         </el-card>
 
         <p style="text-align: justify" v-if="municipality['description_'+ $i18n.locale] !== null">{{
           municipality['description_'+ $i18n.locale] }}</p>
         <div style="margin-top: 1rem; text-align: center">
-          <h3>Plaintes par thème</h3>
+          <h3>{{$t('Complaints by topic')}}</h3>
           <municipality-stats :id="municipality.id" />
         </div>
 
       </el-col>
       <el-col :xs="24" :sm="12" :lg="8" class="infos">
 
-        <h3>Informations de contacts</h3>
-        <el-row style="padding: 0">
-          <el-col v-if="municipality.city" :xs="24" style="padding: 0"><b>City</b></el-col>
+        <h3>{{$t('Contact information')}}</h3>
+        <el-row style="padding: 0; flex-wrap: wrap"  type="flex">
+          <el-col v-if="municipality.city" :xs="24" :lg="12" style="padding: 0"><b>{{$t('City')}}</b></el-col>
           <el-col v-if="municipality.city" :xs="24" :lg="12" style="padding: 0">{{ municipality.city.name_fr }}</el-col>
-          <el-col v-if="municipality.website" :xs="24" style="padding: 0"><b>Website</b></el-col>
+          <el-col v-if="municipality.website" :xs="24" :lg="12" style="padding: 0"><b>{{$t('Website')}}</b></el-col>
           <el-col v-if="municipality.website" :xs="24" :lg="12" style="padding: 0">{{ municipality.website }}</el-col>
-          <el-col v-if="municipality.phone" :xs="24" style="padding: 0"><b>Phone number</b></el-col>
+          <el-col v-if="municipality.phone" :xs="24" :lg="12" style="padding: 0"><b>{{$t('Phone number')}}</b></el-col>
           <el-col v-if="municipality.phone" :xs="24" :lg="12" style="padding: 0">{{ municipality.phone }}</el-col>
-          <el-col v-if="municipality.email" :xs="24" style="padding: 0"><b>E-mail</b></el-col>
+          <el-col v-if="municipality.email" :xs="24" :lg="12" style="padding: 0"><b>{{$t('E-mail')}}</b></el-col>
           <el-col v-if="municipality.email" :xs="24" :lg="12" style="padding: 0">{{ municipality.email }}</el-col>
-          <el-col v-if="municipality.fax" :xs="24" style="padding: 0"><b>Fax</b></el-col>
+          <el-col v-if="municipality.fax" :xs="24" :lg="12" style="padding: 0"><b>{{$t('Fax')}}</b></el-col>
           <el-col v-if="municipality.fax" :xs="24" :lg="12" style="padding: 0">{{ municipality.fax }}</el-col>
         </el-row>
-        <h3>General</h3>
-        <el-row style="padding: 0">
-          <el-col :xs="24" :lg="12" style="padding: 0"><b>Population</b></el-col>
+        <h3>{{$t('General')}}</h3>
+        <el-row style="padding: 0; flex-wrap: wrap"  type="flex">
+          <el-col :xs="24" :lg="12" style="padding: 0">
+            <b>{{$t('Population')}}</b></el-col>
           <el-col v-if="municipality.population" :xs="24" :lg="12" style="padding: 0">{{ municipality.population }}
           </el-col>
-          <el-col v-if="!municipality.population" :xs="24" :lg="12" style="padding: 0"><i>not defined</i></el-col>
+          <el-col v-if="!municipality.population" :xs="24" :lg="12" style="padding: 0"><i>{{$t('not defined')}}</i></el-col>
 
-          <el-col :xs="24" :lg="12" style="padding: 0"><b>Housing</b></el-col>
+          <el-col :xs="24" :lg="12" style="padding: 0"><b>{{$t('Housing')}}</b></el-col>
           <el-col v-if="municipality.houses" :xs="24" :lg="12" style="padding: 0">{{ municipality.houses }}</el-col>
-          <el-col v-if="!municipality.population" :xs="24" :lg="12" style="padding: 0"><i>not defined</i></el-col>
+          <el-col v-if="!municipality.population" :xs="24" :lg="12" style="padding: 0"><i>{{$t('not defined')}}</i></el-col>
 
-          <el-col :xs="24" :lg="12" style="padding: 0"><b>Municipal council</b></el-col>
+          <el-col :xs="24" :lg="12" style="padding: 0"><b>{{$t('Municipal council')}}</b></el-col>
           <el-col v-if="municipality.municipal_council_number" :xs="24" :lg="12" style="padding: 0">{{
             municipality.municipal_council_number }}
           </el-col>
-          <el-col v-if="!municipality.municipal_council_number" :xs="24" :lg="12" style="padding: 0"><i>not defined</i>
+          <el-col v-if="!municipality.municipal_council_number" :xs="24" :lg="12" style="padding: 0"><i>{{$t('not defined')}}</i>
           </el-col>
 
-          <el-col :xs="24" :lg="12" style="padding: 0"><b>Regional council</b></el-col>
+          <el-col :xs="24" :lg="12" style="padding: 0"><b>{{$t('Regional council')}}</b></el-col>
           <el-col v-if="municipality.regional_council_number" :xs="24" :lg="12" style="padding: 0">{{
             municipality.regional_council_number }}
           </el-col>
-          <el-col v-if="!municipality.regional_council_number" :xs="24" :lg="12" style="padding: 0"><i>not defined</i>
+          <el-col v-if="!municipality.regional_council_number" :xs="24" :lg="12" style="padding: 0"><i>{{$t('not defined')}}</i>
           </el-col>
         </el-row>
 
@@ -144,5 +144,11 @@
 <style scoped>
   .el-col {
     margin-bottom: 1rem;
+  }
+
+  @media screen and (max-width: 840px) {
+    .infos {
+      text-align: center;
+    }
   }
 </style>

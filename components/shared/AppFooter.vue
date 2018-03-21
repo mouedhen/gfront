@@ -1,5 +1,5 @@
 <template>
-  <footer style="display: flex; align-items: center">
+  <footer style="display: flex; align-items: center; justify-content: flex-end;">
     <div class="nav-lang"
          v-for="(locale, index) in locales"
          :key="index">
@@ -34,11 +34,19 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .footer-menu {
-    margin: 0 2rem;
+    width: 100%;
+    padding: 0 2rem;
+    text-align: right;
     a {
       color: #f2f2f2;
+    }
+  }
+  .app[dir='rtl'] {
+    .footer-menu {
+      width: 100%;
+      text-align: left;
     }
   }
 </style>

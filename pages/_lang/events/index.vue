@@ -101,4 +101,10 @@
     text-align: right;
     margin-bottom: 1rem;
   }
+
+  .app[dir='rtl'] {
+    .date {
+      text-align: left;
+    }
+  }
 </style>

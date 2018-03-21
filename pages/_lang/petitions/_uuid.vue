@@ -54,7 +54,7 @@
       </el-dialog>
     </div>
     <el-card style="min-height: calc(100% - 150px)">
-      <el-row>
+      <el-row style="flex-wrap: wrap" type="flex">
         <el-col :xs="24" :md="24" :lg="16" style="padding: 1rem">
           <div class="details-container">
             <h1 style="margin-bottom: 1rem">{{petition.name}}</h1>

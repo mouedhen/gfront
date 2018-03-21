@@ -15,11 +15,11 @@
 }
 
 footer {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   background: #222222;
   left: $navbar-width-lg;
-  width: 100%;
+  width: calc(100% - 350px);
   color: #f2f2f2;
   height: 2rem;
   line-height: 2rem;

@@ -5,7 +5,7 @@
       <div style="text-align: center">
         <p>{{$t('We are eager to discuss with you, and answer any questions you may have. Enter your details and we ll get back to you shortly')}}.</p>
       </div>
-      <el-row>
+      <el-row type="flex" style="flex-wrap: wrap">
         <el-col :xs="24" :md="12" :span="24">
           <div>
             <img style="max-width: 80%" src="/images/logo.png" alt="logo goulel'hom"/>
@@ -16,9 +16,9 @@
             <dt>{{$t('email')}}</dt>
             <dd><a href="mailto:goulelhom@raj-tunisie.org">goulelhom@raj-tunisie.org</a></dd>
             <dt>{{$t('phone number')}}</dt>
-            <dd dir="ltr" v-bind:style="(direction === 'rtl') ? {textAlign: 'right', margin: '0 40px 0 0'} : ''">(+216) 71 247 538</dd>
+            <dd dir="ltr" v-bind:style="(direction === 'rtl') ? {textAlign: 'right', marginRight: '0'} : ''">(+216) 71 247 538</dd>
             <dt>{{$t('fax number')}}</dt>
-            <dd dir="ltr" v-bind:style="(direction === 'rtl') ? {textAlign: 'right', margin: '0 40px 0 0'} : ''">(+216) 71 253 547</dd>
+            <dd dir="ltr" v-bind:style="(direction === 'rtl') ? {textAlign: 'right', marginRight: '0'} : ''">(+216) 71 253 547</dd>
             <dt>{{$t('address')}}</dt>
             <dd>{{$t('2nd floor, 15 Street January 18, 1952 - Tunis 1001')}}</dd>
           </dl>
@@ -75,7 +75,7 @@
         </el-form-item>
 
         <el-form-item class="controls">
-          <el-button type="primary" @click="send">{{$t('submit')}}</el-button>
+          <el-button style="width: 100%" type="primary" @click="send">{{$t('submit')}}</el-button>
         </el-form-item>
 
       </el-form>
@@ -188,7 +188,7 @@
   }
 
   dd {
-    margin-bottom: 1rem;
+    margin-bottom: 1rem !important;
   }
 
   .el-col {
