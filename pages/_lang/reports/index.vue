@@ -1,5 +1,15 @@
 <template>
   <div class="container">
-    coming soon
+    <div id="p-content-undeconstruction">
+      <div id="container">
+        <img src="https://pbs.twimg.com/profile_images/459505368234606592/nuxaaQoo_400x400.jpeg" id="avatar"
+             width="250" draggable="false"/>
+
+        <div id=text>
+          <h1>Building…</h1>
+          <p title="(I guess)">(coming soon)</p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>

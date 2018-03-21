@@ -1,7 +1,8 @@
 #p-content-undeconstruction {
-  margin-left: 350px;
+  #container {
+    transform: translateX(-50%);
+  }
   @media screen and (max-width: $break-xs) {
-    margin-left: 0;
     #container {
       transform: translateX(-50%);
     }
@@ -11,12 +12,11 @@
   TABLET
    */
   @media screen and (min-width: $break-xs) and (max-width: $break-md) {
-    margin-left: 0;
     #container {
       transform: translateX(-50%);
     }
   }
-  height: 100vh;
+  height: 100%;
   width: 100%;
   & {
     background: #EEE;
@@ -44,7 +44,7 @@
     top: 50%;
     left: 50%;
     margin-top: -200px; /*-1/2 of height*/
-    position: fixed;
+    position: absolute;
   }
 
   #avatar {
@@ -76,7 +76,7 @@
     margin: 0;
     padding: 0;
 
-    font-family: Segoe UI, sans-serif;
+    // font-family: Segoe UI, sans-serif;
     font-weight: 100;
     font-style: normal;
     color: rgba(0, 0, 0, 1);
