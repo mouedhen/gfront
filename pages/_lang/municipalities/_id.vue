@@ -38,15 +38,15 @@
         <h3>{{$t('Contact information')}}</h3>
         <el-row style="padding: 0; flex-wrap: wrap"  type="flex">
           <el-col v-if="municipality.city" :xs="24" :lg="12" style="padding: 0"><b>{{$t('City')}}</b></el-col>
-          <el-col v-if="municipality.city" :xs="24" :lg="12" style="padding: 0">{{ municipality.city.name_fr }}</el-col>
+          <el-col v-if="municipality.city" :xs="24" :lg="12" style="padding: 0">{{ municipality.city['name_' + $i18n.locale] }}</el-col>
           <el-col v-if="municipality.website" :xs="24" :lg="12" style="padding: 0"><b>{{$t('Website')}}</b></el-col>
-          <el-col v-if="municipality.website" :xs="24" :lg="12" style="padding: 0">{{ municipality.website }}</el-col>
+          <el-col v-if="municipality.website" :xs="24" :lg="12" style="padding: 0" dir="ltr">{{ municipality.website }}</el-col>
           <el-col v-if="municipality.phone" :xs="24" :lg="12" style="padding: 0"><b>{{$t('Phone number')}}</b></el-col>
-          <el-col v-if="municipality.phone" :xs="24" :lg="12" style="padding: 0">{{ municipality.phone }}</el-col>
+          <el-col v-if="municipality.phone" :xs="24" :lg="12" style="padding: 0" dir="ltr">{{ municipality.phone }}</el-col>
           <el-col v-if="municipality.email" :xs="24" :lg="12" style="padding: 0"><b>{{$t('E-mail')}}</b></el-col>
-          <el-col v-if="municipality.email" :xs="24" :lg="12" style="padding: 0">{{ municipality.email }}</el-col>
+          <el-col v-if="municipality.email" :xs="24" :lg="12" style="padding: 0" dir="ltr">{{ municipality.email }}</el-col>
           <el-col v-if="municipality.fax" :xs="24" :lg="12" style="padding: 0"><b>{{$t('Fax')}}</b></el-col>
-          <el-col v-if="municipality.fax" :xs="24" :lg="12" style="padding: 0">{{ municipality.fax }}</el-col>
+          <el-col v-if="municipality.fax" :xs="24" :lg="12" style="padding: 0" dir="ltr">{{ municipality.fax }}</el-col>
         </el-row>
         <h3>{{$t('General')}}</h3>
         <el-row style="padding: 0; flex-wrap: wrap"  type="flex">
