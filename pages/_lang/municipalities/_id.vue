@@ -40,13 +40,13 @@
           <el-col v-if="municipality.city" :xs="24" :lg="12" style="padding: 0"><b>{{$t('City')}}</b></el-col>
           <el-col v-if="municipality.city" :xs="24" :lg="12" style="padding: 0">{{ municipality.city['name_' + $i18n.locale] }}</el-col>
           <el-col v-if="municipality.website" :xs="24" :lg="12" style="padding: 0"><b>{{$t('Website')}}</b></el-col>
-          <el-col v-if="municipality.website" :xs="24" :lg="12" style="padding: 0" dir="ltr">{{ municipality.website }}</el-col>
+          <el-col v-if="municipality.website" :xs="24" :lg="12" style="padding: 0" dir="ltr" v-bind:style="(direction === 'rtl') ? {textAlign: 'right'} : ''">{{ municipality.website }}</el-col>
           <el-col v-if="municipality.phone" :xs="24" :lg="12" style="padding: 0"><b>{{$t('Phone number')}}</b></el-col>
-          <el-col v-if="municipality.phone" :xs="24" :lg="12" style="padding: 0" dir="ltr">{{ municipality.phone }}</el-col>
+          <el-col v-if="municipality.phone" :xs="24" :lg="12" style="padding: 0" dir="ltr" v-bind:style="(direction === 'rtl') ? {textAlign: 'right'} : ''">{{ municipality.phone }}</el-col>
           <el-col v-if="municipality.email" :xs="24" :lg="12" style="padding: 0"><b>{{$t('E-mail')}}</b></el-col>
-          <el-col v-if="municipality.email" :xs="24" :lg="12" style="padding: 0" dir="ltr">{{ municipality.email }}</el-col>
+          <el-col v-if="municipality.email"  :xs="24" :lg="12" style="padding: 0" dir="ltr" v-bind:style="(direction === 'rtl') ? {textAlign: 'right'} : ''">{{ municipality.email }}</el-col>
           <el-col v-if="municipality.fax" :xs="24" :lg="12" style="padding: 0"><b>{{$t('Fax')}}</b></el-col>
-          <el-col v-if="municipality.fax" :xs="24" :lg="12" style="padding: 0" dir="ltr">{{ municipality.fax }}</el-col>
+          <el-col v-if="municipality.fax" :xs="24" :lg="12" style="padding: 0" dir="ltr" v-bind:style="(direction === 'rtl') ? {textAlign: 'right'} : ''">{{ municipality.fax }}</el-col>
         </el-row>
         <h3>{{$t('General')}}</h3>
         <el-row style="padding: 0; flex-wrap: wrap"  type="flex">
@@ -113,21 +113,21 @@
         if (isNaN(relativeHouses)) {
           return 0
         }
-        return relativeHouses
+        return relativeHouses.toFixed(2)
       },
       relativePopulation: function () {
         let relativePopulation = this.municipality.houses * 100 / this.municipality.city.population;
         if (isNaN(relativePopulation)) {
           return 0
         }
-        return relativePopulation
+        return relativePopulation.toFixed(2)
       },
       inhabitantsHousing: function () {
         let x = this.municipality.population / this.municipality.houses;
         if (isNaN(x)) {
           return 0
         }
-        return 0
+        return x.toFixed(2)
       },
       attachments: function () {
         return this.municipality.attachments
