@@ -4,9 +4,9 @@ const SET_DIRECTION = 'config/SET_DIRECTION';
 export default {
   state: {
     locales: ['en', 'fr', 'ar'],
-    locale: 'en',
+    locale: 'ar',
     directions: ['rtl', 'ltr'],
-    direction: 'ltr'
+    direction: 'rtl'
   },
   getters: {
     getLocales: function (state) {
