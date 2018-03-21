@@ -103,7 +103,8 @@
                 </social-sharing>
               </dd>
             </dl>
-            <div style="text-align: right">
+            <div v-for="attachment in attachments" :key="attachment.id" style="margin-top: 1rem">
+              <img :src="setImg(attachment.url)" style="width: 100%; margin-bottom: 1rem">
             </div>
           </el-card>
         </el-col>
@@ -135,7 +136,6 @@
       ]
     },
     asyncData({params}) {
-      console.log(params.uuid)
       return (new Petition()).fetch(params.uuid)
         .then((petition) => {
           return {petition}
@@ -183,6 +183,10 @@
           return storageDomain + this.petition.cover.url;
         return ''
       },
+      attachments: function () {
+        console.log(this.petition.attachments)
+        return this.petition.attachments
+      },
       signaturesPercentage: function () {
         if (this.petition.requested_signatures_number <= 0) return 0;
         return this.petition.signatures / this.petition.requested_signatures_number * 100
@@ -195,6 +199,9 @@
       handleClose(done) {
         this.petitioner = new Petitioner();
         done();
+      },
+      setImg(uri) {
+        return storageDomain + uri
       },
       submitPetitioner() {
         this.$refs['petitioner'].validate((valid) => {

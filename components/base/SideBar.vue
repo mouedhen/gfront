@@ -84,7 +84,7 @@
             icon: '/images/svg/symbol-defs.svg#icon-files-empty',
             label: this.$t('navigation.reports.title'),
             description: this.$t('navigation.reports.description'),
-            routeName: 'lang-press'
+            routeName: 'lang-reports'
           },
           {
             id: 6,
