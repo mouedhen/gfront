@@ -32,7 +32,10 @@
     },
     methods: {
       hideMenu() {
-        document.getElementById('aside').style.display = 'none';
+        if (window.innerWidth < 480) {
+          let menu = document.getElementById('aside');
+          menu.style.display = 'none';
+        }
       }
     }
   }

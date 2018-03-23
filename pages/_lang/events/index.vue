@@ -15,10 +15,34 @@
           </div>
           <no-ssr>
             <v-embed :id="'gist_' + event.id"
-                    :options="embedOptions">
+                     :options="embedOptions">
               <p>{{event['description_'+ $i18n.locale] }}</p>
             </v-embed>
           </no-ssr>
+          <div style="text-align: center">
+            <social-sharing :url="'https://www.goulelhom.org/'+ $i18n.locale +'/events/' + event.id"
+                            :title="event['name_' + $i18n.locale]"
+                            :description="event['description_'+ $i18n.locale]"
+                            :quote="event['description_'+ $i18n.locale]"
+                            hashtags="GoulelHom,non-profits,organization"
+                            twitter-user="GoulelHom"
+                            inline-template>
+              <div class="social-icons icon-zoom">
+                <network network="facebook">
+                  <i class="fa fa-facebook"></i>
+                </network>
+                <network network="googleplus">
+                  <i class="fa fa-google-plus"></i>
+                </network>
+                <network network="linkedin">
+                  <i class="fa fa-linkedin"></i>
+                </network>
+                <network network="twitter">
+                  <i class="fa fa-twitter"></i>
+                </network>
+              </div>
+            </social-sharing>
+          </div>
           <div style="padding-top: 1rem; text-align: center; text-align: center">
             <div class="card-btn">
               <a href="javascript:;" @click="checkDetails(event.id)">{{$t('view details')}}</a>
@@ -37,6 +61,14 @@
 
   export default {
     components: {VEmbed},
+    head: {
+      link: [
+        {
+          rel: 'stylesheet',
+          href: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'
+        },
+      ]
+    },
     asyncData() {
       return (new Event())
         .fetchAll()

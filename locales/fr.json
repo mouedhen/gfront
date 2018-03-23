@@ -114,5 +114,7 @@
   "This field is required": "Ce champ est requis",
   "Municipal council": "Conseil municipal",
   "Regional council": "Conseil régional",
-  "acceptConditions": "J'ai lu et j'approuve les conditions d'utilisation. Je certifie sur mon honneur la véracité de des informations saisies."
+  "acceptConditions": "J'ai lu et j'approuve les conditions d'utilisation. Je certifie sur mon honneur la véracité de des informations saisies.",
+  "term of use": "conditions d'utilisation",
+  "confidentiality and cookies": "confidentialité et cookies"
 }

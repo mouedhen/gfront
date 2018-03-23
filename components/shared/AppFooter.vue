@@ -11,6 +11,18 @@
     </div>
     <div class="footer-menu">
       <nuxt-link
+        :to="{ name: 'lang-term-of-uses', params: { lang: locale }}">
+        {{ $t('term of use') }}
+      </nuxt-link>
+    </div>
+    <div class="footer-menu">
+      <nuxt-link
+        :to="{ name: 'lang-confidentiality-and-cookies', params: { lang: locale }}">
+        {{ $t('confidentiality and cookies') }}
+      </nuxt-link>
+    </div>
+    <div class="footer-menu">
+      <nuxt-link
         :to="{ name: 'lang-contact-us', params: { lang: locale }}">
         {{ $t('contact us') }}
       </nuxt-link>
