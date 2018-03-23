@@ -1,13 +1,15 @@
 <template>
   <footer>
-    <div class="nav-lang"
-         v-for="(locale, index) in locales"
-         :key="index">
-      <nuxt-link
-        style="color: #47494e"
-        :to="{ name: $route.name, params: { lang: locale }}">
-        {{ locale }}
-      </nuxt-link>
+    <div style="width: 460px">
+      <div class="nav-lang"
+           v-for="(locale, index) in locales"
+           :key="index">
+        <nuxt-link
+          style="color: #47494e"
+          :to="{ name: $route.name, params: { lang: locale }}">
+          {{ locale }}
+        </nuxt-link>
+      </div>
     </div>
     <div class="footer-menu">
       <nuxt-link
@@ -53,8 +55,10 @@
     text-align: right;
     a {
       color: #f2f2f2;
+      font-size: .7rem;
     }
   }
+
   .app[dir='rtl'] {
     .footer-menu {
       width: 100%;
