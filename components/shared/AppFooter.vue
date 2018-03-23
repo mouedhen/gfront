@@ -1,5 +1,5 @@
 <template>
-  <footer style="display: flex; align-items: center; justify-content: flex-end;">
+  <footer>
     <div class="nav-lang"
          v-for="(locale, index) in locales"
          :key="index">

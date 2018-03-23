@@ -33,7 +33,7 @@
         let splashBtnUp = document.getElementById('splash-btn-up');
         let splashBtnDown = document.getElementById('splash-btn-down');
 
-        splash.style.top = '88%';
+        splash.style.top = '85%';
 
         splashTrigger.addEventListener("click", (ev => {
           if (splash.style.top !== '20%') {
@@ -41,7 +41,7 @@
             splashBtnUp.style.display = 'none';
             splashBtnDown.style.display = 'block';
           } else {
-            splash.style.top = '88%';
+            splash.style.top = '85%';
             splashBtnUp.style.display = 'block';
             splashBtnDown.style.display = 'none';
           }

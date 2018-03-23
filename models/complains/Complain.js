@@ -12,6 +12,7 @@ export class Complain extends AbstractModel {
     description: null,
     latitude: null,
     longitude: null,
+    acceptCondition: false,
   }, config = {
     apiUrl: apiDomain + '/public/claims',
   }) {
@@ -29,6 +30,7 @@ export class Complain extends AbstractModel {
     description: null,
     latitude: null,
     longitude: null,
+    acceptCondition: false,
   }) {
     this.id = attributes.id;
     this.claimer_name = attributes.claimer_name;
@@ -38,6 +40,7 @@ export class Complain extends AbstractModel {
     this.description = attributes.description;
     this.latitude = attributes.latitude;
     this.longitude = attributes.longitude;
+    this.acceptCondition = attributes.acceptCondition;
   }
 
   async create() {

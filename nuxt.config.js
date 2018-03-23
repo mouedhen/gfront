@@ -3,6 +3,18 @@ const pkg = require('./package');
 module.exports = {
   mode: 'universal',
 
+  manifest: {
+    name: 'Goulel\'Hom',
+    short_name: 'Goulel\'Hom',
+    lang: 'ar',
+    description: 'non-profits application to collect citizens complains.'
+  },
+
+  meta: {
+    ogHost: 'https://www.goulelhom.org',
+    nativeUI: true
+  },
+
   /*
   ** Headers of the page
   */

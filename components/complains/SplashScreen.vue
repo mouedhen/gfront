@@ -12,7 +12,7 @@
         <el-form ref="claimForm" :model="claim" :rules="rules">
           <no-ssr>
 
-            <claims-stats :themes="themes" :totalClaims="totalClaims"/>
+            <claims-stats :themes="themes" class="claims-stats" :totalClaims="totalClaims"/>
 
           </no-ssr>
           <div v-if="stepOne">
@@ -63,12 +63,17 @@
                         v-model="claim.description"/>
             </el-form-item>
 
-            <el-form-item class="controls" style="text-align: center">
+            <el-form-item prop="acceptConditions">
+              <el-checkbox v-model="claim.acceptConditions" name="acceptCondition"/><span style="margin: 1rem">{{$t('acceptConditions')}}</span>
+            </el-form-item>
+
+            <el-form-item class="controls" style="text-align: center;">
               <el-button type="primary" @click="saveClaim"
                          v-bind:style="(direction === 'rtl') ? {marginLeft: '10px'} : ''"
                          plain>{{$t('next step')}}</el-button>
               <el-button @click="resetForm">{{$t('cancel')}}</el-button>
             </el-form-item>
+
           </div>
           <div v-if="stepTwo">
             <el-form-item>
@@ -105,22 +110,22 @@
     let splashBtnDown = document.getElementById('splash-btn-down');
 
     if (window.innerWidth > 768) {
-      splash.style.top = '5vh';
+      splash.style.top = '1px';
       splashBtnUp.style.display = 'none';
       splashBtnDown.style.display = 'block';
     } else {
-      splash.style.top = '80vh';
+      splash.style.top = '75vh';
       splashBtnUp.style.display = 'block';
       splashBtnDown.style.display = 'none';
     }
 
     splashTrigger.addEventListener("click", (ev => {
-      if (splash.style.top !== '5vh') {
-        splash.style.top = '5vh';
+      if (splash.style.top !== '1px') {
+        splash.style.top = '1px';
         splashBtnUp.style.display = 'none';
         splashBtnDown.style.display = 'block';
       } else {
-        splash.style.top = '80vh';
+        splash.style.top = '75vh';
         splashBtnUp.style.display = 'block';
         splashBtnDown.style.display = 'none';
       }
@@ -149,14 +154,17 @@
         },
         rules: {
           claimer_name: [
-            {required: true, message: 'This field is required.', trigger: 'blur'},
+            {required: true, message: this.$t('This field is required'), trigger: 'blur'},
           ],
           claimer_phone_number: [
-            {required: true, message: 'This field is required.', trigger: 'blur'},
+            {required: true, message: this.$t('This field is required'), trigger: 'blur'},
             {min: 8, max: 16, message: 'This is not a valid phone number.', trigger: 'blur'},
           ],
           description: [
-            {required: true, message: 'This field is required.', trigger: 'blur'},
+            {required: true, message: this.$t('This field is required'), trigger: 'blur'},
+          ],
+          acceptConditions: [
+            {required: true, message: this.$t('This field is required'), trigger: 'blur'},
           ],
         }
       }
@@ -196,14 +204,14 @@
                 this.claimID = claim.id;
                 this.stepOne = false;
                 this.stepTwo = true;
-                this.$message.success('Your complain was been saved and will be processed as soon as possible...')
+                this.$message.success(this.$t('Your complaint has been saved and will be processed as soon as possible...'))
               })
               .catch(error => {
-                this.$message.error('An error was happened. Please try again...')
+                this.$message.error(this.$t('An error has happened. Please try again...'))
               });
             return true
           } else {
-            this.$message.warning('Please check your data');
+            this.$message.warning(this.$t('Please check your data'));
             return false
           }
         })
@@ -235,7 +243,7 @@
 
   .p-forground {
     position: absolute;
-    height: 95vh;
+    height: 100%;
     width: 33vw;
     overflow: scroll;
     transition: top .3s;
@@ -255,11 +263,17 @@
     }
   }
 
+  .claims-stats {
+    @media screen and (max-width: 480px) {
+      display: none;
+    }
+  }
+
   .splash-screen {
     width: 100%;
     background: #f2f2f2;
     position: absolute;
-    min-height: 100%;
+    // min-height: 90%;
     box-shadow: 3px 0 3px rgba(0, 0, 0, .3);
     z-index: 20;
     // top: 88%;
@@ -273,7 +287,7 @@
   }
 
   .form-container {
-    padding: 0 1rem 1rem 1rem;
+    padding: 0 1rem;
   }
 
   .upload-icon {

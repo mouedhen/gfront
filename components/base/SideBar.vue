@@ -1,7 +1,7 @@
 <template>
   <aside id="aside" class="l-aside aside">
     <nav id="asideNavigation" class="l-navigation navigation">
-      <nuxt-link :to="{ name: 'lang', params: { lang: locale }}">
+      <nuxt-link :to="{ name: 'lang', params: { lang: locale }}" @click.native="hideMenu">
         <div class="title-container">
           <div class="nav-icons">
             <svg class="icon icon-camera" style="width: 90px">
@@ -42,7 +42,6 @@
     methods: {
       hideMenu() {
         document.getElementById('aside').style.display = 'none';
-        document.getElementById('menu-button').style.display = 'block';
       }
     },
     computed: {

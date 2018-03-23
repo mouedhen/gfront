@@ -87,7 +87,7 @@
       .slogan {
         width: 100%;
         position: absolute;
-        bottom: 15%;
+        bottom: 20%;
         letter-spacing: -0.1rem;
       }
       .slogan blockquote {

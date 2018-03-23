@@ -1,6 +1,6 @@
 <template>
   <div class="accordion" v-bind="navElement" v-bind:class="{ 'accordion--active': isActive }" style="padding: .2rem">
-    <nuxt-link :to="{ name: navElement.routeName, params: { lang: locale }}">
+    <nuxt-link :to="{ name: navElement.routeName, params: { lang: locale }}" @click.native="hideMenu">
       <button class="button accordion__trigger"
               type="button">
                     <span class="button__symbol--square">
@@ -30,6 +30,11 @@
         locale: 'getLocale',
       }),
     },
+    methods: {
+      hideMenu() {
+        document.getElementById('aside').style.display = 'none';
+      }
+    }
   }
 </script>
 

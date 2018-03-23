@@ -1,4 +1,5 @@
 {
+  "goulelhom": "goulelhom",
   "generics": {
     "next step": "étape suivante",
     "submit": "valider",
@@ -107,6 +108,11 @@
   "Population": "Population",
   "not defined": "non défini",
   "Housing": "Logement",
+  "An error has happened. Please try again...": "Une erreur est survenue. Veuillez réessayer ...",
+  "Please check your data": "Merci de vérifier les données saisies",
+  "Your complaint has been saved and will be processed as soon as possible...": "Votre plainte a été enregistrée et sera traitée dès que possible ...",
+  "This field is required": "Ce champ est requis",
   "Municipal council": "Conseil municipal",
-  "Regional council": "Conseil régional"
+  "Regional council": "Conseil régional",
+  "acceptConditions": "J'ai lu et j'approuve les conditions d'utilisation. Je certifie sur mon honneur la véracité de des informations saisies."
 }

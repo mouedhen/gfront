@@ -72,7 +72,6 @@
     },
     data() {
       return {
-        // claims: [],
         claim: new Complain()
       }
     },
@@ -101,6 +100,10 @@
           that.claim.longitude = position[1];
 
           let map = L.map('mapid').setView(position, 13);
+
+          map.scrollWheelZoom.disable();
+          map.on('focus', () => { map.scrollWheelZoom.enable(); });
+          map.on('blur', () => { map.scrollWheelZoom.disable(); });
 
           L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibW91ZWRoZW4iLCJhIjoiY2o1b25ibHdiMDFqeDJ5bWxlZDBrbmJzdiJ9.KWA1osNZi6DEnhK2vBDb8w',
             {

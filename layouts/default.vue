@@ -1,8 +1,32 @@
 <template>
   <div class="app" :dir="direction">
+
+    <el-menu
+      class="top-bar"
+      mode="horizontal"
+      background-color="#b71c1c"
+      text-color="#f2f2f2"
+      active-text-color="#ffd04b">
+      <el-menu-item index="1"><i class="el-icon-menu" @click="showMenu"></i></el-menu-item>
+      <el-menu-item index="2" @click="goHome" style="text-transform: uppercase; font-weight: bold">
+        {{$t('goulelhom')}}
+      </el-menu-item>
+      <div class="lang-header">
+        <div class="nav-lang"
+             v-for="(locale, index) in locales"
+             :key="index">
+          <nuxt-link
+            style="color: #47494e"
+            :to="{ name: $route.name, params: { lang: locale }}">
+            {{ locale }}
+          </nuxt-link>
+        </div>
+      </div>
+    </el-menu>
+
     <side-bar/>
     <nuxt/>
-    <app-footer />
+    <app-footer/>
   </div>
 </template>
 
@@ -16,10 +40,37 @@
       SideBar,
       AppFooter,
     },
+    mounted() {
+      if (process.browser) {
+        if (window.innerWidth < 480) {
+          let menu = document.getElementById('aside');
+          menu.style.display = 'none';
+        }
+      }
+    },
     computed: {
       ...mapGetters({
         direction: 'getDirection',
+        locales: 'getLocales',
+        locale: 'getLocale',
       })
+    },
+    methods: {
+      showMenu() {
+        let menu = document.getElementById('aside');
+        menu.style.display = 'block';
+      },
+      goHome() {
+        this.$router.push({ name: 'lang', params: { lang: this.locale }})
+      }
     },
   }
 </script>
+<style scoped>
+  .top-bar {
+    background: #b71c1c;
+    &, li {
+      color: #f2f2f2 !important;
+    }
+  }
+</style>

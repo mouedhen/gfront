@@ -1,4 +1,5 @@
 {
+  "goulelhom": "ڨوللهم",
   "generics": {
     "next step": "الخطوة التالية",
     "submit": "إرسال",
@@ -107,6 +108,11 @@
   "Population": "تعداد السكان",
   "not defined": "غير معرف",
   "Housing": "مساكن",
+  "An error has happened. Please try again...": "حدث خطأ. يرجى المحاولة مرة أخرى ...",
+  "Please check your data": "يرجى التحقق من البيانات...",
+  "Your complaint has been saved and will be processed as soon as possible...": "تم حفظ شكواك وسيتم معالجتها في أقرب وقت ممكن ...",
+  "This field is required": "هذه الخانة مطلوبه",
   "Municipal council": "المجلس البلدي",
-  "Regional council": "المجلس المحلي"
+  "Regional council": "المجلس المحلي",
+  "acceptConditions": "لقد قرأت شروط الاستخدام وأوافق عليها. أقرّ بشرفي بصحة المعلومات المدخلة."
 }

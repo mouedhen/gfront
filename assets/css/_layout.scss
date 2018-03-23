@@ -1,6 +1,5 @@
 @import "variables";
 
-
 .container {
   position: absolute;
   left: $navbar-width-lg;
@@ -10,12 +9,16 @@
   padding-bottom: 32px;
   @media screen and (max-width: $break-xs) {
     left: 0;
-    width: 100vw;
+    width: 100%;
+    margin-top: 60px !important;
+    height: calc(100vh - 60px);
   }
 }
 
 footer {
-  position: absolute;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: fixed;
   bottom: 0;
   background: #222222;
   left: $navbar-width-lg;
@@ -26,12 +29,37 @@ footer {
   z-index: 30;
   @media screen and (max-width: $break-xs) {
     left: 0;
+    width: 100vw !important;
   }
+}
+
+
+.lang-header {
+  line-height: 60px;
+  float: right;
+}
+
+.top-bar {
+  z-index: 99;
+  width: 100%;
+  position: fixed;
+  padding: 0 6px;
 }
 
 .app[dir='rtl'] {
   .navbar {
     right: 0;
+  }
+  .top-bar {
+    padding: 0 0 0 6px;
+  }
+
+  .lang-header {
+    float: left;
+  }
+
+  .el-menu--horizontal .el-menu-item {
+    float: right;
   }
   .container, footer {
     right: $navbar-width-lg;
@@ -40,8 +68,34 @@ footer {
     @media screen and (max-width: $break-xs) {
       // right: $navbar-width-xs;
       left: 0;
-      // width: calc(100vw - 50px);
-      width: 100vw;
+      width: 100vw !important;
     }
   }
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  @media screen and (max-width: $break-xs) {
+    display: none !important;
+  }
+}
+
+.top-bar {
+  display: none;
+  @media screen and (max-width: $break-xs) {
+    display: block;
+  }
+}
+
+.el-menu--horizontal > .el-menu-item:hover, .el-menu--horizontal > .el-submenu.is-active .el-submenu__title, .el-menu--horizontal > .el-submenu:hover .el-submenu__title {
+  color: #f2f2f2 !important;
+  background: #b71c1c;
+  border-bottom: 5px solid #f2f2f2;
+}
+
+.el-menu-item, .el-submenu__title {
+  color: #f2f2f2 !important;
+  background: #b71c1c;
 }

@@ -8,13 +8,13 @@
         <h1 class="title" style="text-align: center">{{ municipality['name_'+ $i18n.locale] }}</h1>
 
         <el-col :xs="24" :lg="12" style="text-align: center">
-          <el-progress type="circle" :percentage="relativePopulation"/>
+          <el-progress type="circle" :percentage="parseFloat(relativePopulation)"/>
           <br>
           <span>{{$t('% total population of')}} {{ municipality.city['name_'+ $i18n.locale] }}</span>
         </el-col>
 
         <el-col :xs="24" :lg="12" style="text-align: center">
-          <el-progress type="circle" :percentage="relativeHouses"/>
+          <el-progress type="circle" :percentage="parseFloat(relativeHouses)"/>
           <br>
           <span>{{$t('% total housing of')}} {{ municipality.city['name_'+ $i18n.locale] }}</span>
         </el-col>
@@ -88,6 +88,7 @@
 </template>
 
 <script>
+  import {mapGetters} from 'vuex'
   import {Municipality} from "../../../models/complains/Municipality";
   import {storageDomain} from "../../../models/config";
   import MunicipalityStats from "../../../components/municipalities/MunicipalityStats"
@@ -108,6 +109,9 @@
       },
     },
     computed: {
+      ...mapGetters({
+        direction: 'getDirection'
+      }),
       relativeHouses: function () {
         let relativeHouses = this.municipality.houses * 100 / this.municipality.city.houses;
         if (isNaN(relativeHouses)) {
