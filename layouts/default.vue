@@ -6,7 +6,7 @@
       mode="horizontal"
       background-color="#b71c1c"
       text-color="#f2f2f2"
-      active-text-color="#ffd04b">
+      active-text-color="#f2f2f2">
       <el-menu-item index="1"><i class="el-icon-menu" @click="showMenu"></i></el-menu-item>
       <el-menu-item index="2" @click="goHome" style="text-transform: uppercase; font-weight: bold">
         {{$t('goulelhom')}}
@@ -61,16 +61,26 @@
         menu.style.display = 'block';
       },
       goHome() {
-        this.$router.push({ name: 'lang', params: { lang: this.locale }})
+        this.$router.push({name: 'lang', params: {lang: this.locale}});
+        if (window.innerWidth < 480) {
+          let menu = document.getElementById('aside');
+          menu.style.display = 'none';
+        }
       }
     },
   }
 </script>
-<style scoped>
+<style lang="scss" scoped>
   .top-bar {
     background: #b71c1c;
     &, li {
       color: #f2f2f2 !important;
+    }
+  }
+
+  #aside {
+    @media screen and (min-width: 480px) {
+      display: block !important;
     }
   }
 </style>

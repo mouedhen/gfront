@@ -163,6 +163,12 @@
           description: [
             {required: true, message: this.$t('This field is required'), trigger: 'blur'},
           ],
+          municipality_id: [
+            {required: true, message: this.$t('This field is required'), trigger: 'blur'},
+          ],
+          subject: [
+            {required: true, message: this.$t('This field is required'), trigger: 'blur'},
+          ],
           acceptConditions: [
             {required: true, message: this.$t('This field is required'), trigger: 'blur'},
           ],
@@ -273,7 +279,7 @@
     width: 100%;
     background: #f2f2f2;
     position: absolute;
-    // min-height: 90%;
+    min-height: 100%;
     box-shadow: 3px 0 3px rgba(0, 0, 0, .3);
     z-index: 20;
     // top: 88%;

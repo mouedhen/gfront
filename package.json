@@ -11,12 +11,12 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.0.0",
+    "@nuxtjs/axios": "^5.1.1",
     "@nuxtjs/google-analytics": "^2.0.2",
     "@nuxtjs/pwa": "^2.0.8",
     "animejs": "^2.2.0",
     "chart.js": "^2.7.2",
-    "element-ui": "^1.4.9",
+    "element-ui": "^2.2.2",
     "leaflet": "^1.3.1",
     "leaflet-fa-markers": "0.0.5",
     "leaflet.locatecontrol": "^0.62.0",
@@ -24,25 +24,25 @@
     "libsass-compass-vertical-rhythm": "^1.0.0",
     "modularscale-sass": "^3.0.5",
     "moment": "^2.21.0",
-    "nuxt": "^1.0.0",
+    "nuxt": "^1.4.0",
     "nuxt-dropzone": "^0.2.7",
-    "sass-math-pow": "^0.1.4",
+    "sass-math-pow": "^0.1.5",
     "suitcss-components-button": "^6.0.2",
     "swiper": "^4.2.0",
     "vue-awesome-swiper": "^3.1.3",
-    "vue-chartjs": "^3.2.1",
+    "vue-chartjs": "^3.3.1",
     "vue-cleave-component": "^1.0.2",
     "vue-embed": "^1.0.0",
     "vue-flickity": "^1.0.9",
-    "vue-i18n": "^7.4.2",
+    "vue-i18n": "^7.6.0",
     "vue-masonry": "^0.10.17",
     "vue-social-sharing": "^2.3.3"
   },
   "devDependencies": {
-    "cross-env": "^5.0.1",
-    "node-sass": "^4.7.2",
-    "sass-loader": "^6.0.6",
+    "cross-env": "^5.1.4",
+    "node-sass": "^4.8.3",
+    "sass-loader": "^6.0.7",
     "svg-inline-loader": "^0.8.0",
-    "svg-sprite-loader": "^3.6.2"
+    "svg-sprite-loader": "^3.7.3"
   }
 }

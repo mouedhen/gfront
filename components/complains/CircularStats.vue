@@ -1,6 +1,9 @@
 <template>
     <div class="display-in-block mlr35">
-        <svg overflow="visible" :id="id" class="circle-stat" viewBox="0 0 110 110" width="110" height="110" xmlns="http://www.w3.org/2000/svg" v-on:click.prevent="test" :stroke-dasharray="strokeValue + ' 330'" :stroke-dashoffset="strokeValue">
+        <svg overflow="visible" :id="id"
+             direction="rtl" xml:lang="fa"
+             class="circle-stat" viewBox="0 0 110 110" width="110" height="110"
+             xmlns="http://www.w3.org/2000/svg" v-on:click.prevent="test" :stroke-dasharray="strokeValue + ' 330'" :stroke-dashoffset="strokeValue">
             <g>
                 <ellipse ry="50" rx="50" id="svg_1" cy="52" cx="52.5" stroke-width="3" :stroke="color" fill="#fff" stroke-linecap="round" ></ellipse>
                 <text  font-size="14" x="50%" y="65%" class="title" text-anchor="middle" stroke-width="0" stroke="#000" fill="#000000">{{title}}</text>
