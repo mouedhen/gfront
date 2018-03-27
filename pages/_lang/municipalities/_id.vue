@@ -29,36 +29,61 @@
           municipality['description_'+ $i18n.locale] }}</p>
         <div style="margin-top: 1rem; text-align: center">
           <h3>{{$t('Complaints by topic')}}</h3>
-          <municipality-stats :id="municipality.id" />
+          <municipality-stats :id="municipality.id"/>
+        </div>
+
+        <div style="text-align: center; margin-top: 1rem" dir="ltr">
+          <h3>{{$t('navigation.complains.title')}}</h3>
+          <el-card v-for="claim in municipality.claims" :key="claim.id" style="margin-top: 1rem">
+            <p>{{claim.description}}</p>
+
+            <div style="margin-top: 1rem; display: flex; flex-wrap: wrap">
+              <img :src="attachment.src" height="120" v-for="attachment in claim.attachments" :key="attachment.id"
+                   style="margin-left: 1rem">
+            </div>
+
+          </el-card>
         </div>
 
       </el-col>
       <el-col :xs="24" :sm="12" :lg="8" class="infos">
 
         <h3>{{$t('Contact information')}}</h3>
-        <el-row style="padding: 0; flex-wrap: wrap"  type="flex">
+        <el-row style="padding: 0; flex-wrap: wrap" type="flex">
           <el-col v-if="municipality.city" :xs="24" :lg="12" style="padding: 0"><b>{{$t('City')}}</b></el-col>
-          <el-col v-if="municipality.city" :xs="24" :lg="12" style="padding: 0">{{ municipality.city['name_' + $i18n.locale] }}</el-col>
+          <el-col v-if="municipality.city" :xs="24" :lg="12" style="padding: 0">{{ municipality.city['name_' +
+            $i18n.locale] }}
+          </el-col>
           <el-col v-if="municipality.website" :xs="24" :lg="12" style="padding: 0"><b>{{$t('Website')}}</b></el-col>
-          <el-col v-if="municipality.website" :xs="24" :lg="12" style="padding: 0" dir="ltr" v-bind:style="(direction === 'rtl') ? {textAlign: 'right'} : ''">{{ municipality.website }}</el-col>
+          <el-col v-if="municipality.website" :xs="24" :lg="12" style="padding: 0" dir="ltr"
+                  v-bind:style="(direction === 'rtl') ? {textAlign: 'right'} : ''">{{ municipality.website }}
+          </el-col>
           <el-col v-if="municipality.phone" :xs="24" :lg="12" style="padding: 0"><b>{{$t('Phone number')}}</b></el-col>
-          <el-col v-if="municipality.phone" :xs="24" :lg="12" style="padding: 0" dir="ltr" v-bind:style="(direction === 'rtl') ? {textAlign: 'right'} : ''">{{ municipality.phone }}</el-col>
+          <el-col v-if="municipality.phone" :xs="24" :lg="12" style="padding: 0" dir="ltr"
+                  v-bind:style="(direction === 'rtl') ? {textAlign: 'right'} : ''">{{ municipality.phone }}
+          </el-col>
           <el-col v-if="municipality.email" :xs="24" :lg="12" style="padding: 0"><b>{{$t('E-mail')}}</b></el-col>
-          <el-col v-if="municipality.email"  :xs="24" :lg="12" style="padding: 0" dir="ltr" v-bind:style="(direction === 'rtl') ? {textAlign: 'right'} : ''">{{ municipality.email }}</el-col>
+          <el-col v-if="municipality.email" :xs="24" :lg="12" style="padding: 0" dir="ltr"
+                  v-bind:style="(direction === 'rtl') ? {textAlign: 'right'} : ''">{{ municipality.email }}
+          </el-col>
           <el-col v-if="municipality.fax" :xs="24" :lg="12" style="padding: 0"><b>{{$t('Fax')}}</b></el-col>
-          <el-col v-if="municipality.fax" :xs="24" :lg="12" style="padding: 0" dir="ltr" v-bind:style="(direction === 'rtl') ? {textAlign: 'right'} : ''">{{ municipality.fax }}</el-col>
+          <el-col v-if="municipality.fax" :xs="24" :lg="12" style="padding: 0" dir="ltr"
+                  v-bind:style="(direction === 'rtl') ? {textAlign: 'right'} : ''">{{ municipality.fax }}
+          </el-col>
         </el-row>
         <h3>{{$t('General')}}</h3>
-        <el-row style="padding: 0; flex-wrap: wrap"  type="flex">
+        <el-row style="padding: 0; flex-wrap: wrap" type="flex">
           <el-col :xs="24" :lg="12" style="padding: 0">
             <b>{{$t('Population')}}</b></el-col>
           <el-col v-if="municipality.population" :xs="24" :lg="12" style="padding: 0">{{ municipality.population }}
           </el-col>
-          <el-col v-if="!municipality.population" :xs="24" :lg="12" style="padding: 0"><i>{{$t('not defined')}}</i></el-col>
+          <el-col v-if="!municipality.population" :xs="24" :lg="12" style="padding: 0"><i>{{$t('not defined')}}</i>
+          </el-col>
 
           <el-col :xs="24" :lg="12" style="padding: 0"><b>{{$t('Housing')}}</b></el-col>
           <el-col v-if="municipality.houses" :xs="24" :lg="12" style="padding: 0">{{ municipality.houses }}</el-col>
-          <el-col v-if="!municipality.population" :xs="24" :lg="12" style="padding: 0"><i>{{$t('not defined')}}</i></el-col>
+          <el-col v-if="!municipality.population" :xs="24" :lg="12" style="padding: 0"><i>{{$t('not defined')}}</i>
+          </el-col>
 
           <el-col :xs="24" :lg="12" style="padding: 0"><b>{{$t('Municipal council')}}</b></el-col>
           <el-col v-if="municipality.municipal_council_number" :xs="24" :lg="12" style="padding: 0">{{
@@ -68,8 +93,7 @@
           </el-col>
 
           <el-col :xs="24" :lg="12" style="padding: 0"><b>{{$t('Regional council')}}</b></el-col>
-          <el-col v-if="municipality.regional_council_number" :xs="24" :lg="12" style="padding: 0">{{
-            municipality.regional_council_number }}
+          <el-col v-if="municipality.regional_council_number" :xs="24" :lg="12" style="padding: 0">{{ municipality.regional_council_number }}
           </el-col>
           <el-col v-if="!municipality.regional_council_number" :xs="24" :lg="12" style="padding: 0"><i>{{$t('not defined')}}</i>
           </el-col>
@@ -93,15 +117,19 @@
   import {storageDomain} from "../../../models/config";
   import MunicipalityStats from "../../../components/municipalities/MunicipalityStats"
 
+
   export default {
     components: {
-      MunicipalityStats
+      MunicipalityStats,
     },
     asyncData({params}) {
       return (new Municipality()).fetch(params.id)
         .then(municipality => {
           return {municipality}
         })
+    },
+    mounted() {
+      console.log(this.municipality)
     },
     methods: {
       setImg(uri) {

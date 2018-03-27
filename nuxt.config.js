@@ -41,7 +41,8 @@ module.exports = {
     { src: '@/plugins/VueFlickity.js', ssr: false },
     { src: '@/plugins/VueSwiperPlugin.js', ssr: false },
     { src: '@/plugins/vue-masonry.js', ssr: false },
-    { src: '~plugins/vue-chartjs.js', ssr: false },
+    { src: '@/plugins/vue-chartjs.js', ssr: false },
+    { src: '@/plugins/vue-simple-lightbox.js', ssr: false },
   ],
 
   router: {

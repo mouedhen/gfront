@@ -26,6 +26,7 @@ export class Municipality extends AbstractModel {
     city_id: null,
 
     city: {},
+    claims: [],
     attachments: [],
   }, config = {
     apiUrl: apiDomain + '/public/municipalities',
@@ -59,6 +60,7 @@ export class Municipality extends AbstractModel {
     city_id: null,
 
     city: {},
+    claims: [],
     attachments: [],
   }) {
     this.id = attributes.id;
@@ -79,6 +81,7 @@ export class Municipality extends AbstractModel {
     this.is_active = attributes.is_active;
     this.city_id = attributes.city_id;
     this.city = attributes.city;
+    this.claims = attributes.claims;
     this.attachments = attributes.attachments;
   }
 

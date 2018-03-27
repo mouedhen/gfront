@@ -36,6 +36,7 @@
     "vue-flickity": "^1.0.9",
     "vue-i18n": "^7.6.0",
     "vue-masonry": "^0.10.17",
+    "vue-simple-lightbox": "^1.1.0",
     "vue-social-sharing": "^2.3.3"
   },
   "devDependencies": {
