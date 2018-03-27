@@ -56,19 +56,19 @@
           </el-col>
           <el-col v-if="municipality.website" :xs="24" :lg="12" style="padding: 0"><b>{{$t('Website')}}</b></el-col>
           <el-col v-if="municipality.website" :xs="24" :lg="12" style="padding: 0" dir="ltr"
-                  v-bind:style="(direction === 'rtl') ? {textAlign: 'right'} : ''">{{ municipality.website }}
+                  v-bind:style="(direction === 'rtl') ? {textAlign: 'right'} : ''" class="infos">{{ municipality.website }}
           </el-col>
           <el-col v-if="municipality.phone" :xs="24" :lg="12" style="padding: 0"><b>{{$t('Phone number')}}</b></el-col>
           <el-col v-if="municipality.phone" :xs="24" :lg="12" style="padding: 0" dir="ltr"
-                  v-bind:style="(direction === 'rtl') ? {textAlign: 'right'} : ''">{{ municipality.phone }}
+                  v-bind:style="(direction === 'rtl') ? {textAlign: 'right'} : ''" class="infos">{{ municipality.phone }}
           </el-col>
           <el-col v-if="municipality.email" :xs="24" :lg="12" style="padding: 0"><b>{{$t('E-mail')}}</b></el-col>
           <el-col v-if="municipality.email" :xs="24" :lg="12" style="padding: 0" dir="ltr"
-                  v-bind:style="(direction === 'rtl') ? {textAlign: 'right'} : ''">{{ municipality.email }}
+                  v-bind:style="(direction === 'rtl') ? {textAlign: 'right'} : ''" class="infos">{{ municipality.email }}
           </el-col>
           <el-col v-if="municipality.fax" :xs="24" :lg="12" style="padding: 0"><b>{{$t('Fax')}}</b></el-col>
           <el-col v-if="municipality.fax" :xs="24" :lg="12" style="padding: 0" dir="ltr"
-                  v-bind:style="(direction === 'rtl') ? {textAlign: 'right'} : ''">{{ municipality.fax }}
+                  v-bind:style="(direction === 'rtl') ? {textAlign: 'right'} : ''" class="infos">{{ municipality.fax }}
           </el-col>
         </el-row>
         <h3>{{$t('General')}}</h3>
@@ -180,7 +180,7 @@
 
   @media screen and (max-width: 840px) {
     .infos {
-      text-align: center;
+      text-align: center !important;
     }
   }
 </style>
