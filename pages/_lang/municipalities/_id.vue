@@ -37,9 +37,9 @@
           <el-card v-for="claim in municipality.claims" :key="claim.id" style="margin-top: 1rem">
             <p>{{claim.description}}</p>
 
-            <div style="margin-top: 1rem; display: flex; flex-wrap: wrap">
-              <img :src="attachment.src" height="120" v-for="attachment in claim.attachments" :key="attachment.id"
-                   style="margin-left: 1rem">
+            <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; justify-content: center">
+              <img :src="attachment.src" height="200" v-for="attachment in claim.attachments" :key="attachment.id"
+                   style="margin-left: 1rem; margin-bottom: 1rem">
             </div>
 
           </el-card>
