@@ -27,17 +27,17 @@
 
         <p style="text-align: justify" v-if="municipality['description_'+ $i18n.locale] !== null">{{
           municipality['description_'+ $i18n.locale] }}</p>
-        <div style="margin-top: 1rem; text-align: center">
+        <div style="margin-top: 1rem; text-align: center" v-if="municipality.claims.length > 0">
           <h3>{{$t('Complaints by topic')}}</h3>
           <municipality-stats :id="municipality.id"/>
         </div>
 
-        <div style="text-align: center; margin-top: 1rem" dir="ltr">
+        <div style="text-align: center; margin-top: 1rem" dir="ltr" v-if="municipality.claims.length > 0">
           <h3>{{$t('navigation.complains.title')}}</h3>
           <el-card v-for="claim in municipality.claims" :key="claim.id" style="margin-top: 1rem">
             <p>{{claim.description}}</p>
 
-            <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; justify-content: center">
+            <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; justify-content: center" v-if="claim.attachments.length > 0">
               <img :src="attachment.src" height="200" v-for="attachment in claim.attachments" :key="attachment.id"
                    style="margin-left: 1rem; margin-bottom: 1rem">
             </div>
