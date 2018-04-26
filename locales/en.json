@@ -37,17 +37,8 @@
     }
   },
   "home": {
-    "slogan-1-word-1": "We can build the future",
-    "slogan-1-word-2": "TOGETHER",
-    "slogan-2-word-1": "The true balance of democracy is not only in election funds but in",
-    "slogan-2-word-2": "people's consciousness",
-    "slogan-2-cite": "Jean-Jacques Rousseau",
-    "slogan-3-word-1": "The power of the people is stronger than the people in the",
-    "slogan-3-word-2": "Power",
-    "slogan-3-cite": "Anonymous",
-    "slogan-4-word-1": "No one likes his restrictions even if they are",
-    "slogan-4-word-2": "Gold",
-    "slogan-4-cite": "Abraham Lincoln"
+    "slogan-2-word-1": "The true balance of democracy is not only in election funds but in people's consciousness",
+    "slogan-2-cite": "Jean-Jacques Rousseau"
   },
   "complains": {
     "title": "complains"

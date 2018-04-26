@@ -37,17 +37,8 @@
     }
   },
   "home": {
-    "slogan-1-word-1": "Construisons notre avenir",
-    "slogan-1-word-2": "ENSEMBLE",
-    "slogan-2-word-1": "Le véritable équilibre de la démocratie n'est pas seulement dans les fonds électoraux mais dans",
-    "slogan-2-word-2": "LA CONSCIENCE DES GENS",
-    "slogan-2-cite": "Jean-Jacques Rousseau",
-    "slogan-3-word-1": "Le pouvoir du peuple est plus fort que le peuple au",
-    "slogan-3-word-2": "POUVOIR",
-    "slogan-3-cite": "Anonymous",
-    "slogan-4-word-1": "Personne n'aime des chaînes même si elle sont en",
-    "slogan-4-word-2": "OR",
-    "slogan-4-cite": "Abraham Lincoln"
+    "slogan-2-word-1": "Le véritable équilibre de la démocratie n'est pas seulement dans les fonds électoraux mais dans LA CONSCIENCE DES GENS",
+    "slogan-2-cite": "Jean-Jacques Rousseau"
   },
   "complains": {
     "title": "plaintes"

@@ -32,15 +32,11 @@
     mounted() {
       axios.get(apiUrl + 'presentation-video')
         .then(response => {
-          console.log('------------------------------')
-          console.log(response.data.data.url)
-          console.log('------------------------------')
           this.videoUrl = response.data.data.url.replace('watch?v=', 'embed/')
         })
         .catch((e) => {
           console.log(e)
         });
-      console.log(this.videoUrl);
       if (process.browser) {
         let splash = document.getElementById('splash');
         let splashTrigger = document.getElementById('splash-up');

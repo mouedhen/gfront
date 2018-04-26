@@ -3,6 +3,15 @@
   <div id="carousel" class="carousel">
     <no-ssr>
       <flickity ref="flickity" :options="flickityOptions">
+
+        <div v-for="item in slides" :key="item.id" class="carousel__item">
+          <img :src="item.slide" alt="Sonio">
+          <div class="slogan">
+            <blockquote><span class="word">{{ item.quote }}</span><br>
+              <cite v-if="item.author">-- {{ item.author }} --</cite></blockquote>
+          </div>
+        </div>
+        <!--
         <div class="carousel__item">
           <img src="/images/slider/slide_0.jpg" alt="Sonio">
           <div class="slogan">
@@ -39,6 +48,7 @@
             </blockquote>
           </div>
         </div>
+        -->
       </flickity>
     </no-ssr>
 
@@ -48,6 +58,7 @@
 <script>
 
   export default {
+    props: ['slides'],
     data() {
       return {
         preloading: true,
@@ -57,7 +68,7 @@
           prevNextButtons: false,
           pageDots: false,
           wrapAround: true
-        }
+        },
       }
     },
   }
