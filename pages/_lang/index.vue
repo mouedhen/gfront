@@ -36,8 +36,8 @@
           return {
             slides: [{
               id: 0,
-              quote: this.$t('home.slogan-2-word-1'),
-              author: this.$t('home.slogan-2-cite'),
+              quote: '',
+              author: '',
               slide: '/images/slider/slide_0.jpg',
             }]
           }
