@@ -22,21 +22,22 @@
   import axios from "axios";
 
   export default {
+    props: ['videoUrl'],
     data() {
       return {
         isVisible: false,
-        videoUrl: 'https://www.youtube.com/watch?v=FzwZTOtzGrg'.replace('watch?v=', 'embed/')
+        // videoUrl: 'https://www.youtube.com/watch?v=FzwZTOtzGrg'.replace('watch?v=', 'embed/')
       }
     },
     methods: {},
     mounted() {
-      axios.get(apiUrl + 'presentation-video')
-        .then(response => {
-          this.videoUrl = response.data.data.url.replace('watch?v=', 'embed/')
-        })
-        .catch((e) => {
-          console.log(e)
-        });
+      // axios.get(apiUrl + 'presentation-video')
+      //   .then(response => {
+      //     this.videoUrl = response.data.data.url.replace('watch?v=', 'embed/')
+      //   })
+      //   .catch((e) => {
+      //     console.log(e)
+      //   });
       if (process.browser) {
         let splash = document.getElementById('splash');
         let splashTrigger = document.getElementById('splash-up');
