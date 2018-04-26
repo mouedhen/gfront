@@ -6,7 +6,7 @@
            :key="index">
         <nuxt-link
           style="color: #47494e"
-          :to="{ name: $route.name, params: { lang: locale }}">
+          :to="{ name: currentRoute, params: { lang: locale }}">
           {{ locale }}
         </nuxt-link>
       </div>
@@ -36,8 +36,13 @@
   import {mapGetters} from 'vuex'
 
   export default {
+    data() {
+      return {
+        currentRoute: '',
+      }
+    },
     mounted() {
-      console.log(this.$route.name)
+      this.currentRoute = (this.$route.name !== 'index' ? this.$route.name : 'lang');
     },
     computed: {
       ...mapGetters({

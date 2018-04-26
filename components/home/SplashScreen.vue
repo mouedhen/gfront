@@ -8,8 +8,7 @@
         </el-button>
       </div>
       <div class="iframe-container">
-
-        <iframe src="https://www.youtube.com/embed/FzwZTOtzGrg" frameborder="0" gesture="media"
+        <iframe :src="videoUrl" frameborder="0" gesture="media"
                 class="splash-iframe"
                 allow="encrypted-media" allowfullscreen="allowfullscreen" width="100%"
                 height="100%"></iframe>
@@ -19,14 +18,29 @@
 </template>
 
 <script>
+  import {apiUrl} from "../../models/config";
+  import axios from "axios";
+
   export default {
     data() {
       return {
-        isVisible: false
+        isVisible: false,
+        videoUrl: 'https://www.youtube.com/watch?v=FzwZTOtzGrg'.replace('watch?v=', 'embed/')
       }
     },
     methods: {},
     mounted() {
+      axios.get(apiUrl + 'presentation-video')
+        .then(response => {
+          console.log('------------------------------')
+          console.log(response.data.data.url)
+          console.log('------------------------------')
+          this.videoUrl = response.data.data.url.replace('watch?v=', 'embed/')
+        })
+        .catch((e) => {
+          console.log(e)
+        });
+      console.log(this.videoUrl);
       if (process.browser) {
         let splash = document.getElementById('splash');
         let splashTrigger = document.getElementById('splash-up');
