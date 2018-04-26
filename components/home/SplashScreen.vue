@@ -87,8 +87,7 @@
   .el-button {
     font-size: 2rem;
     line-height: 2rem;
-    padding-left: 15px;
-    padding-top: 10px;
+    padding: 10px 15px;
   }
 
   .iframe-container {
