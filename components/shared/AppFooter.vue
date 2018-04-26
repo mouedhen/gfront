@@ -31,7 +31,7 @@
     </div>
 
     <div>
-      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">
         <img alt="Licence Creative Commons"
              style="border-width:0; margin-top: .8rem"
              src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"/>

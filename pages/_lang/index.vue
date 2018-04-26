@@ -26,9 +26,6 @@
         locale: 'getLocale',
       })
     },
-    mounted() {
-      console.log(this.slides)
-    },
     asyncData ({ params, error }) {
       return axios.get(apiUrl + 'slides?lang=' + params.locale)
         .then(response => {
