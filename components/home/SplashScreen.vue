@@ -2,29 +2,31 @@
   <div class="p-forground" id="splash">
     <div class="splash-screen">
       <div>
-        <el-button class="splash-up" id="splash-up" type="primary">
-          <i id="splash-btn-up" style="display: block" class="el-icon-arrow-up"></i>
-          <i id="splash-btn-down" style="display: none" class="el-icon-arrow-down"></i>
+        <el-button class="splash-up" id="splash-up" type="default"
+                   style="background: #b71c1c; border-color: #b71c1c; color: #f2f2f2">
+          <i id="splash-btn-up" style="display: block" class="el-icon-caret-top"></i>
+          <i id="splash-btn-down" style="display: none;" class="el-icon-caret-bottom"></i>
         </el-button>
       </div>
       <div class="iframe-container">
-        <no-ssr>
-          <iframe :src="video" frameborder="0" gesture="media"
-                  class="splash-iframe"
-                  allow="encrypted-media" allowfullscreen="allowfullscreen" width="100%"
-                  height="100%"></iframe>
-        </no-ssr>
+        <iframe
+          :src="video"
+          frameborder="0"
+          gesture="media"
+          class="splash-iframe"
+          allow="encrypted-media"
+          allowfullscreen="allowfullscreen"
+          height="100%"
+          width="100%">
+        </iframe>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  import VueYouTubeEmbed from 'vue-youtube-embed'
-
   export default {
     props: ['video'],
-    components: {VueYouTubeEmbed},
     data() {
       return {
         isVisible: false,
@@ -80,6 +82,13 @@
     box-shadow: 3px 0 3px rgba(0, 0, 0, .3);
     z-index: 20;
     top: 88%;
+  }
+
+  .el-button {
+    font-size: 2rem;
+    line-height: 2rem;
+    padding-left: 15px;
+    padding-top: 10px;
   }
 
   .iframe-container {

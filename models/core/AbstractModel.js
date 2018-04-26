@@ -23,7 +23,7 @@ export class AbstractModel {
         params
       })
       .then(response => {
-        return response.data;
+        return response.data.data;
       })
       .catch(error => {
         throw error
@@ -37,7 +37,7 @@ export class AbstractModel {
         url: this.config.apiUrl + '/' + id,
       })
       .then(response => {
-        this.serialize(response.data);
+        this.serialize(response.data.data);
         return this;
       })
       .catch(error => {

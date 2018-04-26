@@ -15,6 +15,7 @@
 
   import Carousel from '../../components/home/Carousel'
   import SplashScreen from '../../components/home/SplashScreen'
+  import {youtube_parser} from "../../helpers";
 
   export default {
     components: {
@@ -33,12 +34,13 @@
 
       return {
         slides: slidesRes.data.data,
-        video: videoRes.data.data.url
+        video: 'https://www.youtube.com/embed/' + (youtube_parser(videoRes.data.data.url) ? youtube_parser(videoRes.data.data.url) : 'FzwZTOtzGrg')
       }
     },
     mounted() {
       console.log('---------------------------------------------')
       console.log(this.video)
+      console.log('---------------------------------------------')
     }
   }
 </script>

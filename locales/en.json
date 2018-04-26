@@ -12,7 +12,7 @@
       "description_2": "Today, you have the opportunity to express your opinion, expose your problem freely, you can also submit your complaint or your petition in order to reach a solution with public institutions."
     },
     "complains": {
-      "title": "complains",
+      "title": "complaints",
       "description": "Here you can submit a complaint for the public authorities, public transport or municipalities. If you notice abuses or violations of the environment or the collective interest, you can complain and provide evidence such as photos or videos. You can also locate complaints on the map."
     },
     "petitions": {
@@ -41,7 +41,7 @@
     "slogan-2-cite": "Jean-Jacques Rousseau"
   },
   "complains": {
-    "title": "complains"
+    "title": "complaints"
   },
   "contact us": "contact us",
   "We are eager to discuss with you, and answer any questions you may have. Enter your details and we ll get back to you shortly": "We are eager to discuss with you, and answer any questions you may have. Enter your details and we'll get back to you shortly",
