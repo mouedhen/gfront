@@ -2,7 +2,7 @@
   <div class="container">
     <div class="p-background">
       <carousel :slides="slides"/>
-      <splash-screen :video="video"/>
+      <splash-screen :videos="videos"/>
     </div>
   </div>
 </template>
@@ -15,7 +15,6 @@
 
   import Carousel from '../../components/home/Carousel'
   import SplashScreen from '../../components/home/SplashScreen'
-  import {youtube_parser} from "../../helpers";
 
   export default {
     components: {
@@ -29,16 +28,16 @@
     },
     async asyncData({ params, error }) {
 
-      let slidesRes = await axios.get(apiUrl + 'slides?lang=' + params.locale)
-      let videoRes = await axios.get(apiUrl + 'presentation-video')
+      let slidesRes = await axios.get(apiUrl + 'slides?lang=' + params.locale);
+      let videoRes = await axios.get(apiUrl + 'presentation-video');
 
       return {
         slides: slidesRes.data.data,
-        video: 'https://www.youtube.com/embed/' + (youtube_parser(videoRes.data.data.url) ? youtube_parser(videoRes.data.data.url) : 'FzwZTOtzGrg')
+        videos: videoRes.data.data,
       }
     },
     mounted() {
-      //
+      console.log(this.videos)
     }
   }
 </script>

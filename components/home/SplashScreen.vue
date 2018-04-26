@@ -1,4 +1,5 @@
 <template>
+
   <div class="p-forground" id="splash">
     <div class="splash-screen">
       <div>
@@ -8,28 +9,75 @@
           <i id="splash-btn-down" style="display: none;" class="el-icon-caret-bottom"></i>
         </el-button>
       </div>
-      <div class="iframe-container">
-        <iframe
-          :src="video"
-          frameborder="0"
-          gesture="media"
-          class="splash-iframe"
-          allow="encrypted-media"
-          allowfullscreen="allowfullscreen"
-          height="100%"
-          width="100%">
-        </iframe>
-      </div>
+
+      <transition name="fade">
+
+        <div v-if="videoVisible" style="position: relative; display: flex; flex-direction: row;">
+
+          <div
+            style="margin-left: .5rem;display: flex; align-items: center; justify-content: center; cursor: pointer">
+            <el-button @click="nextSlide" type="info" plain icon="el-icon-caret-right" circle
+                       style="width: 4rem; height: 4rem"/>
+          </div>
+
+          <div class="iframe-container">
+            <iframe
+              :src="setEmbedLink(videos[index])"
+              frameborder="0"
+              gesture="media"
+              class="splash-iframe"
+              allow="encrypted-media"
+              allowfullscreen="allowfullscreen"
+              height="100%"
+              width="100%">
+            </iframe>
+          </div>
+          <div
+            style="margin-right: .5rem;display: flex; align-items: center; justify-content: center; cursor: pointer">
+            <el-button @click="previousSlide" type="info" plain icon="el-icon-caret-left" circle
+                       style="width: 4rem; height: 4rem"/>
+          </div>
+        </div>
+
+      </transition>
     </div>
   </div>
+
 </template>
 
 <script>
+  import {youtube_parser} from "../../helpers";
+
   export default {
-    props: ['video'],
+    props: ['videos'],
     data() {
       return {
         isVisible: false,
+        index: 0,
+        videoVisible: true,
+      }
+    },
+    methods: {
+      previousSlide() {
+        this.videoVisible = false;
+        if (this.index === 0 && this.videos.length > 0) {
+          this.index = this.videos.length - 1
+        } else {
+          this.index--;
+        }
+        this.videoVisible = true;
+      },
+      nextSlide() {
+        this.videoVisible = false;
+        if (this.index === (this.videos.length - 1)) {
+          this.index = 0
+        } else {
+          this.index++;
+        }
+        this.videoVisible = true;
+      },
+      setEmbedLink(video) {
+        return 'https://www.youtube.com/embed/' + (youtube_parser(video.url) ? youtube_parser(video.url) : 'FzwZTOtzGrg')
       }
     },
     mounted() {
@@ -75,11 +123,12 @@
   .splash-screen {
     width: 90%;
     height: auto;
-    background: #f2f2f2;
+    background: none;
+    color: #f2f2f2;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    box-shadow: 3px 0 3px rgba(0, 0, 0, .3);
+    // box-shadow: 3px 0 3px rgba(0, 0, 0, .3);
     z-index: 20;
     top: 88%;
   }
@@ -104,4 +153,5 @@
     width: 100%;
     position: absolute;
   }
+
 </style>

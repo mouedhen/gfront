@@ -107,8 +107,8 @@
         line-height: 1.3rem;
         font-weight: 900;
         text-align: right;
-        padding-right: 5%;
-        padding-left: 5%;
+        padding-right: 12%;
+        padding-left: 12%;
         text-transform: uppercase;
         strong {
           font-weight: 900;

@@ -17,3 +17,12 @@ export function youtube_parser(url) {
   let match = url.match(regExp);
   return (match && match[7].length === 11) ? match[7] : false;
 }
+
+export function sleep(milliseconds) {
+  let start = new Date().getTime();
+  for (let i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
