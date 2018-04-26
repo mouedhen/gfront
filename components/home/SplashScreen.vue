@@ -8,36 +8,29 @@
         </el-button>
       </div>
       <div class="iframe-container">
-        <iframe :src="videoUrl" frameborder="0" gesture="media"
-                class="splash-iframe"
-                allow="encrypted-media" allowfullscreen="allowfullscreen" width="100%"
-                height="100%"></iframe>
+        <no-ssr>
+          <iframe :src="video" frameborder="0" gesture="media"
+                  class="splash-iframe"
+                  allow="encrypted-media" allowfullscreen="allowfullscreen" width="100%"
+                  height="100%"></iframe>
+        </no-ssr>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  import {apiUrl} from "../../models/config";
-  import axios from "axios";
+  import VueYouTubeEmbed from 'vue-youtube-embed'
 
   export default {
-    props: ['videoUrl'],
+    props: ['video'],
+    components: {VueYouTubeEmbed},
     data() {
       return {
         isVisible: false,
-        // videoUrl: 'https://www.youtube.com/watch?v=FzwZTOtzGrg'.replace('watch?v=', 'embed/')
       }
     },
-    methods: {},
     mounted() {
-      // axios.get(apiUrl + 'presentation-video')
-      //   .then(response => {
-      //     this.videoUrl = response.data.data.url.replace('watch?v=', 'embed/')
-      //   })
-      //   .catch((e) => {
-      //     console.log(e)
-      //   });
       if (process.browser) {
         let splash = document.getElementById('splash');
         let splashTrigger = document.getElementById('splash-up');

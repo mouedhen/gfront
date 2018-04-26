@@ -2,7 +2,7 @@
   <div class="container">
     <div class="p-background">
       <carousel :slides="slides"/>
-      <splash-screen :videoUrl="videoUrl"/>
+      <splash-screen :video="video"/>
     </div>
   </div>
 </template>
@@ -27,32 +27,19 @@
       })
     },
     async asyncData({ params, error }) {
-      let [slidesRes, videoRes] = await Promise.all([
-        axios.get(apiUrl + 'slides?lang=' + params.locale),
-        axios.get(apiUrl + 'presentation-video'),
-      ]);
+
+      let slidesRes = await axios.get(apiUrl + 'slides?lang=' + params.locale)
+      let videoRes = await axios.get(apiUrl + 'presentation-video')
+
       return {
         slides: slidesRes.data.data,
-        videoUrl: videoRes.data.data.url.replace('watch?v=', 'embed/')
+        video: videoRes.data.data.url
       }
     },
-    // asyncData ({ params, error }) {
-    //   return axios.get(apiUrl + 'slides?lang=' + params.locale)
-    //     .then(response => {
-    //       return {slides: response.data.data}
-    //     })
-    //     .catch(e => {
-    //       console.log(e);
-    //       return {
-    //         slides: [{
-    //           id: 0,
-    //           quote: '',
-    //           author: '',
-    //           slide: '/images/slider/slide_0.jpg',
-    //         }]
-    //       }
-    //     })
-    // }
+    mounted() {
+      console.log('---------------------------------------------')
+      console.log(this.video)
+    }
   }
 </script>
 
