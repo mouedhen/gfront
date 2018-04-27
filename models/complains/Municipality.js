@@ -1,12 +1,11 @@
 import {AbstractModel} from "../core/AbstractModel";
-import {apiDomain} from "../config";
+import {apiUrl} from "../config";
 
 export class Municipality extends AbstractModel {
   constructor(attributes = {
     id: -1,
-    name_en: '',
-    name_fr: '',
-    name_ar: '',
+    name: '',
+    description: '',
 
     population: null,
     houses: null,
@@ -18,18 +17,13 @@ export class Municipality extends AbstractModel {
     email: '',
     fax: '',
 
-    description_en: '',
-    description_fr: '',
-    description_ar: '',
-
-    is_active: false,
     city_id: null,
 
     city: {},
-    claims: [],
+    complains: [],
     attachments: [],
   }, config = {
-    apiUrl: apiDomain + '/public/municipalities',
+    apiUrl: apiUrl + 'municipalities',
   }) {
     super();
     this.serialize(attributes);
@@ -38,9 +32,7 @@ export class Municipality extends AbstractModel {
 
   serialize(attributes = {
     id: -1,
-    name_en: '',
-    name_fr: '',
-    name_ar: '',
+    name: '',
 
     population: null,
     houses: null,
@@ -52,21 +44,17 @@ export class Municipality extends AbstractModel {
     email: '',
     fax: '',
 
-    description_en: '',
-    description_fr: '',
-    description_ar: '',
+    description: '',
 
     is_active: false,
     city_id: null,
 
     city: {},
-    claims: [],
+    complains: [],
     attachments: [],
   }) {
     this.id = attributes.id;
-    this.name_en = attributes.name_en;
-    this.name_fr = attributes.name_fr;
-    this.name_ar = attributes.name_ar;
+    this.name = attributes.name;
     this.population = attributes.population;
     this.houses = attributes.houses;
     this.regional_council_number = attributes.regional_council_number;
@@ -75,13 +63,11 @@ export class Municipality extends AbstractModel {
     this.phone = attributes.phone;
     this.email = attributes.email;
     this.fax = attributes.fax;
-    this.description_en = attributes.description_en;
-    this.description_fr = attributes.description_fr;
-    this.description_ar = attributes.description_ar;
+    this.description = attributes.description;
     this.is_active = attributes.is_active;
     this.city_id = attributes.city_id;
     this.city = attributes.city;
-    this.claims = attributes.claims;
+    this.complains = attributes.complains;
     this.attachments = attributes.attachments;
   }
 

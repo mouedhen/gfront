@@ -32,8 +32,4 @@ export class Contact extends AbstractModel {
     async fetchAll(params) {
         throw "Not allowed methods"
     }
-
-    async fetch(id) {
-        throw "Not allowed methods"
-    }
 }

@@ -14,9 +14,15 @@
 
         <div v-if="videoVisible" style="position: relative; display: flex; flex-direction: row;">
 
-          <div
+          <div v-if="direction === 'rtl'"
             style="margin-left: .5rem;display: flex; align-items: center; justify-content: center; cursor: pointer">
             <el-button @click="nextSlide" type="info" plain icon="el-icon-caret-right" circle
+                       style="width: 4rem; height: 4rem"/>
+          </div>
+
+          <div v-else
+            style="margin-right: .5rem;display: flex; align-items: center; justify-content: center; cursor: pointer">
+            <el-button @click="previousSlide" type="info" plain icon="el-icon-caret-left" circle
                        style="width: 4rem; height: 4rem"/>
           </div>
 
@@ -32,11 +38,19 @@
               width="100%">
             </iframe>
           </div>
-          <div
+
+          <div v-if="direction === 'rtl'"
             style="margin-right: .5rem;display: flex; align-items: center; justify-content: center; cursor: pointer">
             <el-button @click="previousSlide" type="info" plain icon="el-icon-caret-left" circle
                        style="width: 4rem; height: 4rem"/>
           </div>
+
+          <div v-else
+               style="margin-left: .5rem;display: flex; align-items: center; justify-content: center; cursor: pointer">
+            <el-button @click="nextSlide" type="info" plain icon="el-icon-caret-right" circle
+                       style="width: 4rem; height: 4rem"/>
+          </div>
+
         </div>
 
       </transition>
@@ -47,6 +61,7 @@
 
 <script>
   import {youtube_parser} from "../../helpers";
+  import {mapGetters} from 'vuex'
 
   export default {
     props: ['videos'],
@@ -56,6 +71,11 @@
         index: 0,
         videoVisible: true,
       }
+    },
+    computed: {
+      ...mapGetters({
+        direction: 'getDirection'
+      })
     },
     methods: {
       previousSlide() {

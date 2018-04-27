@@ -1,18 +1,16 @@
 import {AbstractModel} from "../core/AbstractModel";
-import {apiDomain} from "../config";
+import {apiUrl} from "../config";
 
 export class Theme extends AbstractModel {
   constructor(attributes = {
     id: -1,
-    name_en: '',
-    name_fr: '',
-    name_ar: '',
-
-    claims_count: null,
+    name: '',
+    description: '',
     color: null,
-    is_active: false,
+    claims_count: 0,
+
   }, config = {
-    apiUrl: apiDomain + '/public/themes',
+    apiUrl: apiUrl + 'themes',
   }) {
     super();
     this.serialize(attributes);
@@ -21,21 +19,15 @@ export class Theme extends AbstractModel {
 
   serialize(attributes = {
     id: -1,
-    name_en: '',
-    name_fr: '',
-    name_ar: '',
-
-    claims_count: null,
+    name: '',
+    description: '',
     color: null,
-    is_active: false,
+    claims_count: 0,
   }) {
     this.id = attributes.id;
-    this.name_en = attributes.name_en;
-    this.name_fr = attributes.name_fr;
-    this.name_ar = attributes.name_ar;
-    this.claims_count = attributes.claims_count;
+    this.name = attributes.name;
+    this.description = attributes.description;
     this.color = attributes.color;
-    this.is_active = attributes.is_active;
+    this.claims_count = attributes.claims_count;
   }
-
 }

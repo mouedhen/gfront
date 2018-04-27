@@ -30,11 +30,12 @@ export class AbstractModel {
       })
   }
 
-  async fetch(id) {
+  async fetch({id, params}) {
     return axios(
       {
         method: 'GET',
         url: this.config.apiUrl + '/' + id,
+        params
       })
       .then(response => {
         this.serialize(response.data.data);
@@ -57,7 +58,7 @@ export class AbstractModel {
         data: this
       })
       .then(response => {
-        this.serialize(response.data);
+        this.serialize(response.data.data);
         return this
       })
       .catch(error => {

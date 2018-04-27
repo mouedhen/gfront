@@ -5,18 +5,18 @@
 
     <el-row :gutter="24" style="padding: 1rem; flex-wrap: wrap" type="flex">
       <el-col :xs="24" :sm="12" :lg="16">
-        <h1 class="title" style="text-align: center">{{ municipality['name_'+ $i18n.locale] }}</h1>
+        <h1 class="title" style="text-align: center">{{ municipality['name'] }}</h1>
 
         <el-col :xs="24" :lg="12" style="text-align: center">
           <el-progress type="circle" :percentage="parseFloat(relativePopulation)"/>
           <br>
-          <span>{{$t('% total population of')}} {{ municipality.city['name_'+ $i18n.locale] }}</span>
+          <span>{{$t('% total population of')}} {{ municipality.city['name'] }}</span>
         </el-col>
 
         <el-col :xs="24" :lg="12" style="text-align: center">
           <el-progress type="circle" :percentage="parseFloat(relativeHouses)"/>
           <br>
-          <span>{{$t('% total housing of')}} {{ municipality.city['name_'+ $i18n.locale] }}</span>
+          <span>{{$t('% total housing of')}} {{ municipality.city['name'] }}</span>
         </el-col>
 
         <el-card class="stat margin-top">
@@ -26,18 +26,19 @@
         </el-card>
 
         <p style="text-align: justify" v-if="municipality['description_'+ $i18n.locale] !== null">{{
-          municipality['description_'+ $i18n.locale] }}</p>
-        <div style="margin-top: 1rem; text-align: center" v-if="municipality.claims.length > 0">
+          municipality['description'] }}</p>
+        <div style="margin-top: 1rem; text-align: center" v-if="municipality.complains.length > 0">
           <h3>{{$t('Complaints by topic')}}</h3>
           <municipality-stats :id="municipality.id"/>
         </div>
 
-        <div style="text-align: center; margin-top: 1rem" dir="ltr" v-if="municipality.claims.length > 0">
+        <div style="text-align: center; margin-top: 1rem" dir="ltr" v-if="municipality.complains.length > 0">
           <h3>{{$t('navigation.complains.title')}}</h3>
-          <el-card v-for="claim in municipality.claims" :key="claim.id" style="margin-top: 1rem">
+          <el-card v-for="claim in municipality.complains" :key="claim.id" style="margin-top: 1rem">
             <p>{{claim.description}}</p>
 
-            <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; justify-content: center" v-if="claim.attachments.length > 0">
+            <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; justify-content: center"
+                 v-if="claim.attachments.length > 0">
               <img :src="attachment.src" height="200" v-for="attachment in claim.attachments" :key="attachment.id"
                    style="margin-left: 1rem; margin-bottom: 1rem">
             </div>
@@ -51,26 +52,29 @@
         <h3>{{$t('Contact information')}}</h3>
         <el-row style="padding: 0; flex-wrap: wrap" type="flex">
           <el-col v-if="municipality.city" :xs="24" :lg="12" style="padding: 0"><b>{{$t('City')}}</b></el-col>
-          <el-col v-if="municipality.city" :xs="24" :lg="12" style="padding: 0">{{ municipality.city['name_' +
-            $i18n.locale] }}
+          <el-col v-if="municipality.city" :xs="24" :lg="12" style="padding: 0">{{ municipality.city['name'] }}
           </el-col>
           <el-col v-if="municipality.website" :xs="24" :lg="12" style="padding: 0"><b>{{$t('Website')}}</b></el-col>
           <el-col v-if="municipality.website" :xs="24" :lg="12" style="padding: 0" dir="ltr"
-                  v-bind:style="(direction === 'rtl') ? {textAlign: 'right'} : ''" class="infos">{{ municipality.website }}
+                  v-bind:style="(direction === 'rtl') ? {textAlign: 'right'} : ''" class="infos">{{ municipality.website
+            }}
           </el-col>
           <el-col v-if="municipality.phone" :xs="24" :lg="12" style="padding: 0"><b>{{$t('Phone number')}}</b></el-col>
           <el-col v-if="municipality.phone" :xs="24" :lg="12" style="padding: 0" dir="ltr"
-                  v-bind:style="(direction === 'rtl') ? {textAlign: 'right'} : ''" class="infos">{{ municipality.phone }}
+                  v-bind:style="(direction === 'rtl') ? {textAlign: 'right'} : ''" class="infos">{{ municipality.phone
+            }}
           </el-col>
           <el-col v-if="municipality.email" :xs="24" :lg="12" style="padding: 0"><b>{{$t('E-mail')}}</b></el-col>
           <el-col v-if="municipality.email" :xs="24" :lg="12" style="padding: 0" dir="ltr"
-                  v-bind:style="(direction === 'rtl') ? {textAlign: 'right'} : ''" class="infos">{{ municipality.email }}
+                  v-bind:style="(direction === 'rtl') ? {textAlign: 'right'} : ''" class="infos">{{ municipality.email
+            }}
           </el-col>
           <el-col v-if="municipality.fax" :xs="24" :lg="12" style="padding: 0"><b>{{$t('Fax')}}</b></el-col>
           <el-col v-if="municipality.fax" :xs="24" :lg="12" style="padding: 0" dir="ltr"
                   v-bind:style="(direction === 'rtl') ? {textAlign: 'right'} : ''" class="infos">{{ municipality.fax }}
           </el-col>
         </el-row>
+
         <h3>{{$t('General')}}</h3>
         <el-row style="padding: 0; flex-wrap: wrap" type="flex">
           <el-col :xs="24" :lg="12" style="padding: 0">
@@ -89,13 +93,16 @@
           <el-col v-if="municipality.municipal_council_number" :xs="24" :lg="12" style="padding: 0">{{
             municipality.municipal_council_number }}
           </el-col>
-          <el-col v-if="!municipality.municipal_council_number" :xs="24" :lg="12" style="padding: 0"><i>{{$t('not defined')}}</i>
+          <el-col v-if="!municipality.municipal_council_number" :xs="24" :lg="12" style="padding: 0">
+            <i>{{$t('not defined')}}</i>
           </el-col>
 
           <el-col :xs="24" :lg="12" style="padding: 0"><b>{{$t('Regional council')}}</b></el-col>
-          <el-col v-if="municipality.regional_council_number" :xs="24" :lg="12" style="padding: 0">{{ municipality.regional_council_number }}
+          <el-col v-if="municipality.regional_council_number" :xs="24" :lg="12" style="padding: 0">{{
+            municipality.regional_council_number }}
           </el-col>
-          <el-col v-if="!municipality.regional_council_number" :xs="24" :lg="12" style="padding: 0"><i>{{$t('not defined')}}</i>
+          <el-col v-if="!municipality.regional_council_number" :xs="24" :lg="12" style="padding: 0">
+            <i>{{$t('not defined')}}</i>
           </el-col>
         </el-row>
 
@@ -123,13 +130,10 @@
       MunicipalityStats,
     },
     asyncData({params}) {
-      return (new Municipality()).fetch(params.id)
+      return (new Municipality()).fetch({id: params.id, params: {lang: params.lang}})
         .then(municipality => {
           return {municipality}
         })
-    },
-    mounted() {
-      console.log(this.municipality)
     },
     methods: {
       setImg(uri) {
@@ -138,7 +142,8 @@
     },
     computed: {
       ...mapGetters({
-        direction: 'getDirection'
+        direction: 'getDirection',
+        locale: 'getLocale'
       }),
       relativeHouses: function () {
         let relativeHouses = this.municipality.houses * 100 / this.municipality.city.houses;
@@ -166,7 +171,7 @@
       },
       cover: function () {
         if (this.municipality.cover)
-          return storageDomain + this.municipality.cover.url;
+          return this.municipality.cover.url;
         return storageDomain + '/images/default-municipality-cover.jpg'
       },
     }

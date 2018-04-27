@@ -4,7 +4,7 @@
         <div class="swiper-slide" v-for="theme in themes" :key="theme.id">
             <circular-stats
                     :percentage="(theme.claims_count / totalClaims) * 100"
-                    :color="theme.color" :title="theme['name_'+ $i18n.locale]"
+                    :color="theme.color" :title="theme['name']"
                     :id="'stat' + theme.id"/>
         </div>
       </div>

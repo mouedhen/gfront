@@ -38,21 +38,21 @@
                 <el-option
                   v-for="municipality in municipalities"
                   :key="municipality.id"
-                  :label="municipality['name_'+ $i18n.locale]"
+                  :label="municipality['name']"
                   :value="municipality.id">
                 </el-option>
               </el-select>
             </el-form-item>
 
-            <el-form-item prop="subject">
+            <el-form-item prop="theme_id">
               <el-select
                 style="width: 100%"
-                v-model="claim.subject"
+                v-model="claim.theme_id"
                 :placeholder="$t('subject')">
                 <el-option
                   v-for="theme in themes"
                   :key="theme.id"
-                  :label="theme['name_'+ $i18n.locale]"
+                  :label="theme['name']"
                   :value="theme.id">
                 </el-option>
               </el-select>
@@ -64,13 +64,15 @@
             </el-form-item>
 
             <el-form-item prop="acceptConditions">
-              <el-checkbox v-model="claim.acceptConditions" name="acceptCondition"/><span style="margin: 1rem">{{$t('acceptConditions')}}</span>
+              <el-checkbox v-model="claim.acceptConditions" name="acceptCondition"/>
+              <span style="margin: 1rem">{{$t('acceptConditions')}}</span>
             </el-form-item>
 
             <el-form-item class="controls" style="text-align: center;">
               <el-button type="primary" @click="saveClaim"
                          v-bind:style="(direction === 'rtl') ? {marginLeft: '10px'} : ''"
-                         plain>{{$t('next step')}}</el-button>
+                         plain>{{$t('next step')}}
+              </el-button>
               <el-button @click="resetForm">{{$t('cancel')}}</el-button>
             </el-form-item>
 
@@ -90,11 +92,12 @@
 </template>
 
 <script>
-  import {Municipality} from "~/models/complains/Municipality";
-  import {mapGetters} from 'vuex'
+  import {Municipality} from "../../models/complains/Municipality";
   import Cleave from 'vue-cleave-component';
   import {Theme} from "../../models/complains/Theme";
-  import {apiDomain} from "../../models/config";
+  import {apiDomain, apiUrl} from "../../models/config";
+
+  import {mapGetters} from 'vuex'
 
   import ClaimsStats from '../../components/complains/ClaimsStats'
 
@@ -102,6 +105,8 @@
 
   import Dropzone from 'nuxt-dropzone'
   import 'nuxt-dropzone/dropzone.css'
+  import {Contact} from "../../models/contacts/Contact";
+  import {Complain} from "../../models/complains/Complain";
 
   function splash() {
     let splash = document.getElementById('splash');
@@ -144,6 +149,7 @@
       return {
         municipalities: [],
         themes: [],
+        complain: new Complain(),
         isVisible: false,
         stepOne: true,
         stepTwo: false,
@@ -166,7 +172,7 @@
           municipality_id: [
             {required: true, message: this.$t('This field is required'), trigger: 'blur'},
           ],
-          subject: [
+          theme_id: [
             {required: true, message: this.$t('This field is required'), trigger: 'blur'},
           ],
           acceptConditions: [
@@ -180,18 +186,19 @@
         return {
           thumbnailWidth: 100,
           thumbnailHeight: 100,
-          dictDefaultMessage: "<i class='el-icon-upload upload-icon'></i>UPLOAD ME",
+          dictDefaultMessage: "<i class='el-icon-upload upload-icon'></i>" + this.$t('add files'),
           url: this.claimUpload
         }
       },
       claimUpload: function () {
-        return apiDomain + '/public/claims/upload/' + this.claimID
+        return apiUrl + 'complains/' + this.claimID + '/upload'
       },
       totalClaims: function () {
         return this.claims.length
       },
       ...mapGetters({
-        direction: 'getDirection'
+        direction: 'getDirection',
+        locale: 'getLocale'
       })
     },
     methods: {
@@ -204,16 +211,32 @@
       saveClaim() {
         this.$refs['claimForm'].validate((valid) => {
           if (valid) {
-            this.claim.save()
-              .then(claim => {
-                this.claim = claim;
-                this.claimID = claim.id;
-                this.stepOne = false;
-                this.stepTwo = true;
-                this.$message.success(this.$t('Your complaint has been saved and will be processed as soon as possible...'))
-              })
-              .catch(error => {
-                this.$message.error(this.$t('An error has happened. Please try again...'))
+            (new Contact({name: this.claim.claimer_name, phone_number: this.claim.claimer_phone_number})).save()
+              .then(contact => {
+                console.log(contact)
+                this.complain = new Complain({
+                  contact_id: contact.id,
+                  subject: this.claim.subject,
+                  description: this.claim.description,
+                  longitude: this.claim.longitude,
+                  latitude: this.claim.latitude,
+                  has_approved_sworn_statement: this.claim.acceptConditions,
+                  has_approved_term_of_use: this.claim.acceptConditions,
+                  theme_id: this.claim.theme_id,
+                  municipality_id: this.claim.municipality_id,
+                });
+                console.log(this.complain)
+                this.complain.save()
+                  .then(claim => {
+                    this.claim = claim;
+                    this.claimID = claim.id;
+                    this.stepOne = false;
+                    this.stepTwo = true;
+                    this.$message.success(this.$t('Your complaint has been saved and will be processed as soon as possible...'))
+                  })
+                  .catch(error => {
+                    this.$message.error(this.$t('An error has happened. Please try again...'))
+                  });
               });
             return true
           } else {
@@ -224,12 +247,12 @@
       },
     },
     mounted() {
-      (new Municipality()).fetchAll()
+      (new Municipality()).fetchAll({lang: this.locale})
         .then(municipalities => {
           this.municipalities = municipalities;
         });
 
-      (new Theme()).fetchAll()
+      (new Theme()).fetchAll({lang: this.locale})
         .then(themes => {
           this.themes = themes;
         });
