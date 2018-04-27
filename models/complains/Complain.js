@@ -17,6 +17,7 @@ export class Complain extends AbstractModel {
     has_approved_sworn_statement: false,
     has_approved_term_of_use: false,
     acceptConditions: false,
+    lang: 'en',
   }, config = {
     apiUrl: apiUrl + 'complains',
   }) {
@@ -40,6 +41,7 @@ export class Complain extends AbstractModel {
     has_approved_sworn_statement: false,
     has_approved_term_of_use: false,
     acceptConditions: false,
+    lang: 'en',
   }) {
     this.id = attributes.id;
     this.contact = attributes.contact;
@@ -55,5 +57,6 @@ export class Complain extends AbstractModel {
     this.has_approved_sworn_statement = attributes.has_approved_sworn_statement;
     this.has_approved_term_of_use = attributes.has_approved_term_of_use;
     this.acceptConditions = attributes.acceptConditions;
+    this.lang = attributes.lang;
   }
 }

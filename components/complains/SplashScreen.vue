@@ -224,8 +224,9 @@
                   has_approved_term_of_use: this.claim.acceptConditions,
                   theme_id: this.claim.theme_id,
                   municipality_id: this.claim.municipality_id,
+                  lang: this.locale,
                 });
-                console.log(this.complain)
+
                 this.complain.save()
                   .then(claim => {
                     this.claim = claim;
