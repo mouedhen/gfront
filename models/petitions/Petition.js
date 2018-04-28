@@ -2,9 +2,9 @@ import {apiDomain} from "../config";
 import {Target} from "./Target";
 import {Petitioner} from "./Petitioner";
 import {Theme} from "./Theme";
-import {AbstractModel} from "../core/AbstractModel";
+import {OldAbstractModel} from "../core/OldAbstractModel";
 
-export class Petition extends AbstractModel {
+export class Petition extends OldAbstractModel {
 
   constructor(attributes = {
     id: -1,

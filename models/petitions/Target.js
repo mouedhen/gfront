@@ -1,7 +1,7 @@
-import {AbstractModel} from "../core/AbstractModel";
+import {OldAbstractModel} from "../core/OldAbstractModel";
 import {apiDomain} from "../config";
 
-export class Target extends AbstractModel {
+export class Target extends OldAbstractModel {
 
     constructor(attributes = {
         id: -1,

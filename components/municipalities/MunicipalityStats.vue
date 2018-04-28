@@ -9,7 +9,8 @@
 
 <script>
   import axios from 'axios'
-  import {apiDomain} from "@/models/config";
+  import {apiUrl} from "../../models/config";
+  import {mapGetters} from 'vuex'
 
   export default {
     props: ['id'],
@@ -17,6 +18,11 @@
       return {
         dataSet: null
       }
+    },
+    computed: {
+      ...mapGetters({
+        locale: 'getLocale'
+      })
     },
     mounted() {
       this.getData()
@@ -31,7 +37,8 @@
         axios(
           {
             method: 'GET',
-            url: apiDomain + '/public/municipalities/' + this.id + '/stats',
+            url: apiUrl + 'municipalities/' + this.id + '/stats',
+            params: {lang: this.locale}
           })
           .then(response => {
             let data = response.data;

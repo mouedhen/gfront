@@ -34,6 +34,16 @@ footer {
 }
 
 
+footer {
+  // display: flex;
+  // align-items: center;
+  // justify-content: flex-end;
+  @media screen and (max-width: $break-xs) {
+    display: none !important;
+  }
+}
+
+
 .lang-header {
   line-height: 60px;
   float: right;
@@ -70,15 +80,6 @@ footer {
       left: 0;
       width: 100vw !important;
     }
-  }
-}
-
-footer {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  @media screen and (max-width: $break-xs) {
-    display: none !important;
   }
 }
 

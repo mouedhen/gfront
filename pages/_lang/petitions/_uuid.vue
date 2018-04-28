@@ -136,7 +136,8 @@
       ]
     },
     asyncData({params}) {
-      return (new Petition()).fetch(params.uuid)
+      console.log(params)
+      return (new Petition()).fetch({id: params.uuid})
         .then((petition) => {
           return {petition}
         })
