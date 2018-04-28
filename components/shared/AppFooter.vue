@@ -14,6 +14,21 @@
     </div>
 
     <div class="footer-links">
+
+      <div class="footer-menu">
+        <nuxt-link
+          :to="{ name: 'lang-raj-tunisie', params: { lang: locale }}">
+          {{ $t('raj-tunisia') }}
+        </nuxt-link>
+      </div>
+
+      <div class="footer-menu">
+        <nuxt-link
+          :to="{ name: 'lang-partners', params: { lang: locale }}">
+          {{ $t('partners') }}
+        </nuxt-link>
+      </div>
+
       <div class="footer-menu">
         <nuxt-link
           :to="{ name: 'lang-term-of-uses', params: { lang: locale }}">
