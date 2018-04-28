@@ -54,10 +54,6 @@
       link: [
         {
           rel: 'stylesheet',
-          href: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'
-        },
-        {
-          rel: 'stylesheet',
           crossOrigin: "",
           href: 'https://unpkg.com/leaflet@1.2.0/dist/leaflet.css'
         },
