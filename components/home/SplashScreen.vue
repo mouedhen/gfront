@@ -26,7 +26,7 @@
                        style="width: 4rem; height: 4rem"/>
           </div>
 
-          <div class="iframe-container">
+          <div class="iframe-container" v-if="videos.length > 0">
             <iframe
               :src="setEmbedLink(videos[index])"
               frameborder="0"
@@ -101,6 +101,7 @@
       }
     },
     mounted() {
+      console.log(this.videos)
       if (process.browser) {
         let splash = document.getElementById('splash');
         let splashTrigger = document.getElementById('splash-up');

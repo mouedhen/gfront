@@ -3,7 +3,7 @@
     <div class="notice_container">
       <el-card>
         <div style="text-align: center">
-          <img width="100%" src="/images/logo-raj.jpg" />
+          <img width="320px" src="/images/logo-raj.jpg" />
         </div>
         <raj-ar v-if="locale==='ar'"/>
         <raj-fr v-else-if="locale=== 'fr'"/>
